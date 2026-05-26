@@ -1,5 +1,45 @@
 {
-  "plugin": [
-    ".opencode/plugins/graphify.js"
-  ]
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "docs-graphify": {
+      "description": "Creates and maintains technical documentation for legacy code using Graphify as the primary knowledge source",
+      "mode": "subagent",
+      "temperature": 0,
+      "permission": {
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "todowrite": "allow",
+        "question": "allow",
+        "edit": "ask",
+        "bash": {
+          "*": "ask",
+          "graphify *": "allow",
+          "cat graphify-out/GRAPH_REPORT.md": "allow",
+          "ls *": "allow",
+          "find docs *": "allow"
+        },
+        "webfetch": "deny",
+        "websearch": "deny"
+      }
+    },
+    "technical-documentation": {
+      "description": "Generates technical documentation from code analysis using graphify",
+      "mode": "subagent",
+      "temperature": 0,
+      "permission": {
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "edit": "allow",
+        "bash": {
+          "graphify *": "allow",
+          "cat graphify-out/*": "allow",
+          "ls *": "allow",
+          "*": "ask"
+        },
+        "webfetch": "deny"
+      }
+    }
+  }
 }

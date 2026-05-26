@@ -1,0 +1,176 @@
+graph TD
+    subgraph Model["Domain Model (11 files)"]
+        BaseEntity["BaseEntity (base class)"]
+        Owner["Owner (JPA entity)"]
+        Pet["Pet (JPA entity)"]
+        Visit["Visit (JPA entity)"]
+        Vet["Vet (JPA entity)"]
+        PetType["PetType (JPA entity)"]
+        Specialty["Specialty (enum)"]
+        Vets["Vets (DTO wrapper)"]
+    end
+
+    subgraph RepoInterface["Repository Abstraction (4 files)"]
+        OwnerRepo["OwnerRepository (interface)"]
+        PetRepo["PetRepository (interface)"]
+        VetRepo["VetRepository (interface)"]
+        VisitRepo["VisitRepository (interface)"]
+    end
+
+    subgraph JpaImpl["JPA Implementation (5 files)"]
+        JpaOwner["JpaOwnerRepositoryImpl"]
+        JpaPet["JpaPetRepositoryImpl"]
+        JpaVet["JpaVetRepositoryImpl"]
+        JpaVisit["JpaVisitRepositoryImpl"]
+    end
+
+    subgraph JdbcImpl["JDBC Implementation (10 files)"]
+        JdbcOwner["JdbcOwnerRepositoryImpl"]
+        JdbcPet["JdbcPetRepositoryImpl"]
+        JdbcVet["JdbcVetRepositoryImpl"]
+        JdbcVisit["JdbcVisitRepositoryImpl"]
+        OneToMany["OneToManyResultSetExtractor"]
+        PetVisitExt["JdbcPetVisitExtractor"]
+    end
+
+    subgraph SpringDataImpl["Spring Data JPA (4 files)"]
+        SDOwner["OwnerRepository extends JpaRepository"]
+        SDPet["PetRepository extends JpaRepository"]
+        SDVet["VetRepository extends JpaRepository"]
+        SDVisit["VisitRepository extends JpaRepository"]
+    end
+
+    subgraph Service["Business Service (2 files)"]
+        ClinicService["ClinicService"]
+        PetTypeFormatter["PetTypeFormatter"]
+    end
+
+    subgraph Web["Web Layer (8 files)"]
+        OwnerController["OwnerController"]
+        PetController["PetController"]
+        VetController["VetController"]
+        VisitController["VisitController"]
+        PetValidator["PetValidator"]
+        WelcomeController["WelcomeController"]
+    end
+
+    subgraph CrossCutting["Cross-Cutting (3 files)"]
+        CallMonitor["CallMonitoringAspect (AOP)"]
+        EntityUtils["EntityUtils (utility)"]
+        PetClinicInit["PetclinicInitializer (servlet init)"]
+    end
+
+    subgraph Config["Spring Configuration (7 files)"]
+        BusinessConfig["business-config.xml"]
+        MVCCore["mvc-core-config.xml"]
+        MVCView["mvc-view-config.xml"]
+        DataSource["datasource-config.xml"]
+        ToolsConfig["tools-config.xml"]
+        DataProps["data-access.properties"]
+        AppProps["application.properties"]
+    end
+
+    %% Model dependencies
+    BaseEntity --> Owner
+    BaseEntity --> Pet
+    BaseEntity --> Visit
+    BaseEntity --> Vet
+    Pet --> PetType
+    Owner --> Specialty
+
+    %% Repository interfaces depend on Model
+    OwnerRepo --> Owner
+    PetRepo --> Pet
+    VetRepo --> Vet
+    VisitRepo --> Visit
+
+    %% JPA implementations depend on Repo Interface and Model
+    JpaOwner --> OwnerRepo
+    JpaOwner --> Owner
+    JpaPet --> PetRepo
+    JpaPet --> Pet
+    JpaVet --> VetRepo
+    JpaVet --> Vet
+    JpaVisit --> VisitRepo
+    JpaVisit --> Visit
+
+    %% JDBC implementations depend on Repo Interface and Model
+    JdbcOwner --> OwnerRepo
+    JdbcOwner --> Owner
+    JdbcOwner --> OneToMany
+    JdbcOwner --> PetVisitExt
+    JdbcOwner --> EntityUtils
+    JdbcPet --> PetRepo
+    JdbcPet --> Pet
+    JdbcPet --> EntityUtils
+    JdbcVet --> VetRepo
+    JdbcVet --> Vet
+    JdbcVisit --> VisitRepo
+    JdbcVisit --> Visit
+    OneToMany --> Pet
+    PetVisitExt --> Visit
+
+    %% Spring Data JPA implementations depend on Model (auto-generated)
+    SDOwner --> Owner
+    SDPet --> Pet
+    SDVet --> Vet
+    SDVisit --> Visit
+
+    %% Service depends on Repo Interface and Model
+    ClinicService --> OwnerRepo
+    ClinicService --> PetRepo
+    ClinicService --> VetRepo
+    ClinicService --> VisitRepo
+    ClinicService --> Owner
+    ClinicService --> Pet
+    ClinicService --> Visit
+    ClinicService --> Vet
+    PetTypeFormatter --> PetType
+
+    %% Web depends on Service and Model
+    OwnerController --> ClinicService
+    OwnerController --> Owner
+    OwnerController --> PetValidator
+    PetController --> ClinicService
+    PetController --> Pet
+    PetController --> PetTypeFormatter
+    VetController --> ClinicService
+    VetController --> Vet
+    VisitController --> ClinicService
+    VisitController --> Visit
+    PetValidator --> Pet
+
+    %% Cross-cutting depends on Model
+    CallMonitor --> Owner
+    CallMonitor --> Pet
+    EntityUtils --> BaseEntity
+
+    %% Configuration aggregates all (via Spring profiles)
+    BusinessConfig --> JpaImpl
+    BusinessConfig --> JdbcImpl
+    BusinessConfig --> SpringDataImpl
+    BusinessConfig --> Service
+    BusinessConfig --> Config
+    MVCCore --> Web
+    MVCView --> Web
+    DataSource --> Config
+    ToolsConfig --> CrossCutting
+    DataProps --> Config
+    AppProps --> Config
+
+    %% Styling
+    classDef model fill:#e1f5ff,stroke:#01579b,stroke-width:2px,color:#000
+    classDef repo fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#000
+    classDef impl fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    classDef service fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
+    classDef web fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    classDef crosscut fill:#ede7f6,stroke:#311b92,stroke-width:2px,color:#000
+    classDef config fill:#e0f2f1,stroke:#004d40,stroke-width:2px,color:#000
+
+    class BaseEntity,Owner,Pet,Visit,Vet,PetType,Specialty,Vets model
+    class OwnerRepo,PetRepo,VetRepo,VisitRepo repo
+    class JpaOwner,JpaPet,JpaVet,JpaVisit,JdbcOwner,JdbcPet,JdbcVet,JdbcVisit,OneToMany,PetVisitExt,SDOwner,SDPet,SDVet,SDVisit impl
+    class ClinicService,PetTypeFormatter service
+    class OwnerController,PetController,VetController,VisitController,PetValidator,WelcomeController web
+    class CallMonitor,EntityUtils,PetClinicInit crosscut
+    class BusinessConfig,MVCCore,MVCView,DataSource,ToolsConfig,DataProps,AppProps config
