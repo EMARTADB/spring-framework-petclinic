@@ -1,0 +1,121 @@
+graph TD
+
+    subgraph A_Bootstrap["A: Bootstrap"]
+        INIT["PetclinicInitializer"]
+    end
+
+    subgraph J_Config["J: XML Configuration"]
+        BC["business-config.xml"]
+        DC["datasource-config.xml"]
+        MCC["mvc-core-config.xml"]
+        MVC["mvc-view-config.xml"]
+        TC["tools-config.xml"]
+    end
+
+    subgraph B_Model["B: Domain Model"]
+        BASE["BaseEntity / NamedEntity / Person"]
+        OWNER["Owner"]
+        PET["Pet / PetType"]
+        VET["Vet / Specialty / Vets"]
+        VISIT["Visit"]
+    end
+
+    subgraph C_RepoIface["C: Repository Interfaces"]
+        OR["OwnerRepository"]
+        PR["PetRepository"]
+        VR["VetRepository"]
+        VIR["VisitRepository"]
+    end
+
+    subgraph D_JDBC["D: JDBC Impl (profile: jdbc)"]
+        JOWN["JdbcOwnerRepositoryImpl"]
+        JPET["JdbcPetRepositoryImpl"]
+        JVET["JdbcVetRepositoryImpl"]
+        JVIS["JdbcVisitRepositoryImpl"]
+        JHELP["JdbcPet / RowMappers / OneToManyExtractor"]
+    end
+
+    subgraph E_JPA["E: JPA Impl (profile: jpa)"]
+        PAOWN["JpaOwnerRepositoryImpl"]
+        PAPET["JpaPetRepositoryImpl"]
+        PAVET["JpaVetRepositoryImpl"]
+        PAVIS["JpaVisitRepositoryImpl"]
+    end
+
+    subgraph F_SDjpa["F: Spring Data JPA (profile: spring-data-jpa)"]
+        SDOW["SpringDataOwnerRepository"]
+        SDPE["SpringDataPetRepository"]
+        SDVE["SpringDataVetRepository"]
+        SDVI["SpringDataVisitRepository"]
+    end
+
+    subgraph G_Service["G: Service Facade"]
+        CS["ClinicService / ClinicServiceImpl"]
+    end
+
+    subgraph H_Web["H: MVC Controllers"]
+        WEB["OwnerController / PetController\nVetController / VisitController\nCrashController"]
+        FMT["PetTypeFormatter"]
+        VAL["PetValidator"]
+    end
+
+    subgraph I_Util["I: Cross-Cutting"]
+        AOP["CallMonitoringAspect"]
+        EU["EntityUtils"]
+    end
+
+    INIT --> BC
+    INIT --> TC
+    INIT --> MCC
+    BC --> DC
+    MCC --> MVC
+    MCC --> FMT
+
+    BASE --> OWNER
+    BASE --> PET
+    BASE --> VET
+    BASE --> VISIT
+
+    OR --> OWNER
+    PR --> PET
+    VR --> VET
+    VIR --> VISIT
+
+    JOWN --> OR
+    JPET --> PR
+    JVET --> VR
+    JVIS --> VIR
+    JOWN --> JHELP
+    JPET --> JHELP
+    JVIS --> JHELP
+    JPET --> OR
+    JOWN --> EU
+    JVET --> EU
+    JPET --> EU
+
+    PAOWN --> OR
+    PAPET --> PR
+    PAVET --> VR
+    PAVIS --> VIR
+
+    SDOW --> OR
+    SDPE --> PR
+    SDVE --> VR
+    SDVI --> VIR
+
+    CS --> OR
+    CS --> PR
+    CS --> VR
+    CS --> VIR
+
+    WEB --> CS
+    FMT --> CS
+
+    AOP -.->|"@Around @Repository"| JOWN
+    AOP -.->|"@Around @Repository"| PAOWN
+
+    BC -->|"profile: jdbc"| JOWN
+    BC -->|"profile: jpa"| PAOWN
+    BC -->|"profile: spring-data-jpa"| SDOW
+    TC --> AOP
+    TC -->|"@Cacheable vets"| CS
