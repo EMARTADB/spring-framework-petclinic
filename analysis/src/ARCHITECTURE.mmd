@@ -1,0 +1,146 @@
+graph TD
+    subgraph BOOT["Bootstrap"]
+        INIT["PetclinicInitializer\n(PetclinicInitializer.java)"]
+    end
+
+    subgraph CFG["Infrastructure / Config"]
+        BIZ["business-config.xml"]
+        MVC["mvc-core-config.xml"]
+        TOOLS["tools-config.xml"]
+        DS["datasource-config.xml"]
+        DB["db/*/schema.sql + data.sql"]
+        MSG["messages/messages*.properties"]
+    end
+
+    subgraph MODEL["Domain Model"]
+        BASE["BaseEntity / NamedEntity / Person"]
+        OWNER["Owner"]
+        PET["Pet + PetType"]
+        VET["Vet + Vets + Specialty"]
+        VISIT["Visit"]
+    end
+
+    subgraph REPO_IF["Repository Interfaces"]
+        OWN_IF["OwnerRepository"]
+        PET_IF["PetRepository"]
+        VET_IF["VetRepository"]
+        VIS_IF["VisitRepository"]
+    end
+
+    subgraph REPO_JDBC["Repository — JDBC (profile: jdbc)"]
+        JDBC_OWN["JdbcOwnerRepositoryImpl"]
+        JDBC_PET["JdbcPetRepositoryImpl"]
+        JDBC_VET["JdbcVetRepositoryImpl"]
+        JDBC_VIS["JdbcVisitRepositoryImpl"]
+        JDBC_UTIL["JdbcPet / Mappers / Extractors"]
+    end
+
+    subgraph REPO_JPA["Repository — JPA (profile: jpa)"]
+        JPA_OWN["JpaOwnerRepositoryImpl"]
+        JPA_PET["JpaPetRepositoryImpl"]
+        JPA_VET["JpaVetRepositoryImpl"]
+        JPA_VIS["JpaVisitRepositoryImpl"]
+    end
+
+    subgraph REPO_SD["Repository — Spring Data JPA (profile: spring-data-jpa)"]
+        SD_OWN["SpringDataOwnerRepository"]
+        SD_PET["SpringDataPetRepository"]
+        SD_VET["SpringDataVetRepository"]
+        SD_VIS["SpringDataVisitRepository"]
+    end
+
+    subgraph SVC["Service Layer"]
+        SVC_IF["ClinicService (interface)"]
+        SVC_IMPL["ClinicServiceImpl"]
+    end
+
+    subgraph WEB["Web / MVC"]
+        OWN_CTL["OwnerController"]
+        PET_CTL["PetController"]
+        VET_CTL["VetController"]
+        VIS_CTL["VisitController"]
+        CRASH["CrashController"]
+        FMT["PetTypeFormatter"]
+        VAL["PetValidator"]
+    end
+
+    subgraph VIEW["View Layer (JSP + Tags)"]
+        JSP_OWN["jsp/owners/*.jsp"]
+        JSP_PET["jsp/pets/*.jsp"]
+        JSP_VET["jsp/vets/vetList.jsp"]
+        JSP_EX["jsp/exception.jsp"]
+        TAGS["WEB-INF/tags/*.tag"]
+    end
+
+    subgraph AOP["Cross-Cutting Concerns"]
+        ASPECT["CallMonitoringAspect (JMX)"]
+        EUTIL["EntityUtils"]
+    end
+
+    INIT --> BIZ
+    INIT --> MVC
+    INIT --> TOOLS
+    BIZ --> DS
+    DS --> DB
+
+    BASE --> OWNER
+    BASE --> PET
+    BASE --> VET
+    BASE --> VISIT
+    PET --> OWNER
+    PET --> VISIT
+
+    OWN_IF --> OWNER
+    PET_IF --> PET
+    VET_IF --> VET
+    VIS_IF --> VISIT
+
+    JDBC_OWN --> OWN_IF
+    JDBC_PET --> PET_IF
+    JDBC_VET --> VET_IF
+    JDBC_VIS --> VIS_IF
+    JDBC_OWN --> JDBC_UTIL
+    JDBC_PET --> JDBC_UTIL
+    JDBC_OWN --> EUTIL
+
+    JPA_OWN --> OWN_IF
+    JPA_PET --> PET_IF
+    JPA_VET --> VET_IF
+    JPA_VIS --> VIS_IF
+
+    SD_OWN --> OWN_IF
+    SD_PET --> PET_IF
+    SD_VET --> VET_IF
+    SD_VIS --> VIS_IF
+
+    SVC_IMPL --> SVC_IF
+    SVC_IMPL --> OWN_IF
+    SVC_IMPL --> PET_IF
+    SVC_IMPL --> VET_IF
+    SVC_IMPL --> VIS_IF
+
+    OWN_CTL --> SVC_IF
+    PET_CTL --> SVC_IF
+    VET_CTL --> SVC_IF
+    VIS_CTL --> SVC_IF
+    FMT --> SVC_IF
+
+    OWN_CTL --> JSP_OWN
+    PET_CTL --> JSP_PET
+    VET_CTL --> JSP_VET
+    VIS_CTL --> JSP_PET
+    CRASH --> JSP_EX
+
+    TAGS --> JSP_OWN
+    TAGS --> JSP_PET
+    TAGS --> JSP_VET
+
+    ASPECT -.->|"@Around @Repository"| REPO_JDBC
+    ASPECT -.->|"@Around @Repository"| REPO_JPA
+
+    MSG --> MVC
+
+    BIZ -.->|"profile: jdbc"| REPO_JDBC
+    BIZ -.->|"profile: jpa"| REPO_JPA
+    BIZ -.->|"profile: spring-data-jpa"| REPO_SD
+    TOOLS --> ASPECT

@@ -1,0 +1,32 @@
+# Script para ver qué proveedor tiene Claude Code activo
+# ========================================================
+
+Write-Host ""
+Write-Host "Estado de Claude Code:" -ForegroundColor Cyan
+Write-Host ""
+
+if ($env:CLAUDE_CODE_USE_BEDROCK -eq "1") {
+    Write-Host "  🟦 AWS Bedrock (ACTIVO)" -ForegroundColor Blue
+    Write-Host "     Región: $($env:AWS_REGION)" -ForegroundColor Gray
+    if ($env:AWS_BEARER_TOKEN_BEDROCK) {
+        Write-Host "     API Key configurada: Sí" -ForegroundColor Gray
+    }
+}
+elseif ($env:GOOGLE_APPLICATION_CREDENTIALS) {
+    Write-Host "  🟨 Google Vertex AI (ACTIVO)" -ForegroundColor Yellow
+    Write-Host "     Proyecto: $($env:GOOGLE_CLOUD_PROJECT)" -ForegroundColor Gray
+    Write-Host "     Región: $($env:ANTHROPIC_VERTEX_REGION)" -ForegroundColor Gray
+    Write-Host "     Credenciales: $($env:GOOGLE_APPLICATION_CREDENTIALS)" -ForegroundColor Gray
+}
+elseif ($env:ANTHROPIC_API_KEY) {
+    Write-Host "  🟩 Anthropic API (ACTIVO)" -ForegroundColor Green
+}
+else {
+    Write-Host "  ❌ Sin proveedor configurado" -ForegroundColor Red
+    Write-Host ""
+    Write-Host "  Para activar, ejecuta:" -ForegroundColor Yellow
+    Write-Host "    .\switch-vertex.ps1    # Para Vertex AI" -ForegroundColor Gray
+    Write-Host "    .\switch-bedrock.ps1   # Para AWS Bedrock" -ForegroundColor Gray
+}
+
+Write-Host ""

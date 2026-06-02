@@ -1,0 +1,142 @@
+graph TD
+    %% ── Entry points have a distinct fill ──────────────────────────────
+    classDef entry    fill:#cc785c,stroke:#cc785c,color:#1e1e1e,font-weight:bold
+    classDef ctrl     fill:#2d4a6e,stroke:#4a7fb5,color:#d4d4d4
+    classDef svc      fill:#2d5a3d,stroke:#4caf70,color:#d4d4d4
+    classDef repo     fill:#3d2d5a,stroke:#8a6fb5,color:#d4d4d4
+    classDef model    fill:#3a3a2d,stroke:#a0a060,color:#d4d4d4
+    classDef util     fill:#4a3030,stroke:#b06060,color:#d4d4d4
+    classDef disp     fill:#1e1e1e,stroke:#cc785c,color:#cc785c,stroke-dasharray:5 3
+
+    %% ── Bootstrap / Dispatcher ─────────────────────────────────────────
+    subgraph BOOT["Bootstrap"]
+        INIT["PetclinicInitializer\n(Servlet 3.0)"]:::entry
+        DISP["DispatcherServlet\n(Spring MVC)"]:::disp
+    end
+
+    %% ── Web Layer ──────────────────────────────────────────────────────
+    subgraph WEB["Web Controllers  (HTTP entry points)"]
+        OC["OwnerController\nGET/POST /owners/**"]:::entry
+        PC["PetController\nGET/POST /owners/{id}/pets/**"]:::entry
+        VTC["VetController\nGET /vets  /vets.json  /vets.xml"]:::entry
+        VC["VisitController\nGET/POST /owners/*/pets/{id}/visits/**"]:::entry
+        CC["CrashController\nGET /oups"]:::entry
+        PF["PetTypeFormatter\n(ConversionService — XML-wired)"]:::ctrl
+        PV["PetValidator\n(@InitBinder — DI-wired)"]:::ctrl
+    end
+
+    %% ── Service Layer ──────────────────────────────────────────────────
+    subgraph SVC["Service"]
+        CS["ClinicService\n(interface)"]:::svc
+        CSI["ClinicServiceImpl\n@Transactional  @Cacheable(vets)"]:::svc
+    end
+
+    %% ── Repository Interfaces ──────────────────────────────────────────
+    subgraph RINTF["Repository Interfaces"]
+        ORI["OwnerRepository"]:::repo
+        PRI["PetRepository"]:::repo
+        VRI["VetRepository"]:::repo
+        VSRI["VisitRepository"]:::repo
+    end
+
+    %% ── JDBC Stack (profile: jdbc) ────────────────────────────────────
+    subgraph RJDBC["Repository — JDBC  (profile: jdbc)"]
+        JOI["JdbcOwnerRepositoryImpl"]:::repo
+        JPI["JdbcPetRepositoryImpl"]:::repo
+        JVI["JdbcVetRepositoryImpl"]:::repo
+        JVSI["JdbcVisitRepositoryImpl"]:::repo
+        JPVE["JdbcPetVisitExtractor"]:::util
+        JPM["JdbcPetRowMapper"]:::util
+        JVRM["JdbcVisitRowMapper"]:::util
+        JP["JdbcPet"]:::model
+        OTME["OneToManyResultSetExtractor\n(generic helper)"]:::util
+    end
+
+    %% ── JPA Stack (profile: jpa — DEFAULT) ───────────────────────────
+    subgraph RJPA["Repository — JPA  (profile: jpa  ← default)"]
+        JPAO["JpaOwnerRepositoryImpl\n@SuppressWarnings unchecked ⚠"]:::repo
+        JPAP["JpaPetRepositoryImpl"]:::repo
+        JPAV["JpaVetRepositoryImpl"]:::repo
+        JPAVS["JpaVisitRepositoryImpl"]:::repo
+    end
+
+    %% ── Spring Data JPA Stack (profile: spring-data-jpa) ─────────────
+    subgraph RSD["Repository — Spring Data JPA  (profile: spring-data-jpa)"]
+        SDO["SpringDataOwnerRepository\n(proxy-generated)"]:::repo
+        SDP["SpringDataPetRepository\n(proxy-generated)"]:::repo
+        SDV["SpringDataVetRepository\n(proxy-generated)"]:::repo
+        SDVS["SpringDataVisitRepository\n(proxy-generated)"]:::repo
+    end
+
+    %% ── Cross-Cutting ──────────────────────────────────────────────────
+    subgraph XCUT["Cross-Cutting  (AOP / Util)"]
+        CMA["CallMonitoringAspect\n@Around @Repository  JMX bean\n⚠ no-op under spring-data-jpa"]:::util
+        EU["EntityUtils\n(generic getById helper)"]:::util
+    end
+
+    %% ── Domain Model ──────────────────────────────────────────────────
+    subgraph MODEL["Domain Model  (JPA entities)"]
+        BE["BaseEntity"]:::model
+        NE["NamedEntity"]:::model
+        PE["Person"]:::model
+        OWN["Owner"]:::model
+        PET["Pet"]:::model
+        PT["PetType"]:::model
+        VT["Vet"]:::model
+        VTS["Vets  (JAXB wrapper)"]:::model
+        SP["Specialty"]:::model
+        VS["Visit"]:::model
+    end
+
+    %% ── Dispatcher wires everything ───────────────────────────────────
+    INIT --> DISP
+    DISP -->|"routes to"| OC
+    DISP -->|"routes to"| PC
+    DISP -->|"routes to"| VTC
+    DISP -->|"routes to"| VC
+    DISP -->|"routes to"| CC
+    DISP -->|"ConversionService"| PF
+
+    %% ── Controller → Service ──────────────────────────────────────────
+    OC  --> CSI
+    PC  --> CSI
+    VTC --> CSI
+    VC  --> CSI
+    PF  --> CSI
+    PC  -.->|"@InitBinder"| PV
+
+    %% ── Service → Repositories (interface) ───────────────────────────
+    CSI --> ORI
+    CSI --> PRI
+    CSI --> VRI
+    CSI --> VSRI
+
+    %% ── Spring DI resolves interfaces to impls (profile-gated) ───────
+    ORI -.->|"jdbc"| JOI
+    PRI -.->|"jdbc"| JPI
+    VRI -.->|"jdbc"| JVI
+    VSRI -.->|"jdbc"| JVSI
+
+    ORI -.->|"jpa"| JPAO
+    PRI -.->|"jpa"| JPAP
+    VRI -.->|"jpa"| JPAV
+    VSRI -.->|"jpa"| JPAVS
+
+    ORI -.->|"spring-data-jpa"| SDO
+    PRI -.->|"spring-data-jpa"| SDP
+    VRI -.->|"spring-data-jpa"| SDV
+    VSRI -.->|"spring-data-jpa"| SDVS
+
+    %% ── JDBC internal helpers ─────────────────────────────────────────
+    JOI --> JPVE
+    JPI --> JPM
+    JPI --> JVRM
+    JVI --> OTME
+    JPVE --> JP
+    JOI --> EU
+
+    %% ── AOP advises repo layer ────────────────────────────────────────
+    CMA -.->|"@Around"| JOI
+    CMA -.->|"@Around"| JPI
+    CMA -.->|"@Around"| JPAO
+    CMA -.->|"@Around"| JPAP

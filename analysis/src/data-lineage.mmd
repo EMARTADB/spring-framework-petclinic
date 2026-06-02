@@ -1,0 +1,107 @@
+graph LR
+    %% ── Style classes ─────────────────────────────────────────────────
+    classDef module   fill:#2d2d2d,stroke:#6699cc,color:#d4d4d4
+    classDef store    fill:#1e3a1e,stroke:#4caf70,color:#d4d4d4,rx:6
+    classDef cache    fill:#3a1e3a,stroke:#cc78cc,color:#d4d4d4,rx:6
+    classDef view     fill:#3a3a1e,stroke:#ccaa44,color:#d4d4d4
+
+    %% ── Modules ────────────────────────────────────────────────────────
+    OC["OwnerController"]:::module
+    PC["PetController"]:::module
+    VTC["VetController"]:::module
+    VC["VisitController"]:::module
+    CSI["ClinicServiceImpl"]:::module
+
+    JOI["JdbcOwnerRepositoryImpl"]:::module
+    JPI["JdbcPetRepositoryImpl"]:::module
+    JVI["JdbcVetRepositoryImpl"]:::module
+    JVSI["JdbcVisitRepositoryImpl"]:::module
+
+    JPAO["JpaOwnerRepositoryImpl"]:::module
+    JPAP["JpaPetRepositoryImpl"]:::module
+    JPAV["JpaVetRepositoryImpl"]:::module
+    JPAVS["JpaVisitRepositoryImpl"]:::module
+
+    SDO["SpringDataOwnerRepository"]:::module
+    SDP["SpringDataPetRepository"]:::module
+    SDV["SpringDataVetRepository"]:::module
+    SDVS["SpringDataVisitRepository"]:::module
+
+    %% ── Data stores ────────────────────────────────────────────────────
+    TB_owners[("owners")]:::store
+    TB_pets[("pets")]:::store
+    TB_visits[("visits")]:::store
+    TB_vets[("vets")]:::store
+    TB_specialties[("specialties")]:::store
+    TB_vet_spec[("vet_specialties")]:::store
+    TB_types[("types")]:::store
+    CACHE_vets[["cache: vets"]]:::cache
+
+    %% ── View layer ─────────────────────────────────────────────────────
+    V_ownerDetails["ownerDetails.jsp"]:::view
+    V_ownersList["ownersList.jsp"]:::view
+    V_findOwners["findOwners.jsp"]:::view
+    V_ownerForm["createOrUpdateOwnerForm.jsp"]:::view
+    V_petForm["createOrUpdatePetForm.jsp"]:::view
+    V_visitForm["createOrUpdateVisitForm.jsp"]:::view
+    V_vetList["vetList.jsp"]:::view
+    V_welcome["welcome.jsp"]:::view
+
+    %% ══ DATA EDGES ═════════════════════════════════════════════════════
+    %% ── Controllers → views (read: populates model) ────────────────────
+    OC -->|"read model"| V_ownerDetails
+    OC -->|"read model"| V_ownersList
+    OC -->|"read model"| V_findOwners
+    OC -->|"read model"| V_ownerForm
+    PC -->|"read model"| V_petForm
+    VC -->|"read model"| V_visitForm
+    VTC -->|"read model"| V_vetList
+
+    %% ── JDBC Owner repo ────────────────────────────────────────────────
+    JOI -->|"READ"| TB_owners
+    JOI -->|"WRITE"| TB_owners
+    JOI -->|"READ"| TB_pets
+    JOI -->|"READ"| TB_visits
+    JOI -->|"READ"| TB_types
+
+    %% ── JDBC Pet repo ──────────────────────────────────────────────────
+    JPI -->|"READ"| TB_pets
+    JPI -->|"WRITE"| TB_pets
+    JPI -->|"READ"| TB_types
+    JPI -->|"READ"| TB_visits
+
+    %% ── JDBC Vet repo (N+1 ⚠) ─────────────────────────────────────────
+    JVI -->|"READ"| TB_vets
+    JVI -->|"READ ×N ⚠"| TB_specialties
+    JVI -->|"READ ×N ⚠"| TB_vet_spec
+
+    %% ── JDBC Visit repo ────────────────────────────────────────────────
+    JVSI -->|"READ"| TB_visits
+    JVSI -->|"WRITE"| TB_visits
+
+    %% ── JPA Owner repo ─────────────────────────────────────────────────
+    JPAO -->|"READ / WRITE"| TB_owners
+    JPAO -->|"READ (eager full-graph ⚠)"| TB_pets
+    JPAO -->|"READ (eager full-graph ⚠)"| TB_visits
+
+    %% ── JPA Pet repo ───────────────────────────────────────────────────
+    JPAP -->|"READ / WRITE"| TB_pets
+    JPAP -->|"READ"| TB_types
+
+    %% ── JPA Vet repo ───────────────────────────────────────────────────
+    JPAV -->|"READ (left join fetch)"| TB_vets
+    JPAV -->|"READ (left join fetch)"| TB_specialties
+
+    %% ── JPA Visit repo ─────────────────────────────────────────────────
+    JPAVS -->|"READ / WRITE"| TB_visits
+
+    %% ── Spring Data repos ──────────────────────────────────────────────
+    SDO -->|"READ / WRITE"| TB_owners
+    SDP -->|"READ / WRITE"| TB_pets
+    SDP -->|"READ"| TB_types
+    SDV -->|"READ"| TB_vets
+    SDVS -->|"READ / WRITE"| TB_visits
+
+    %% ── Service cache ──────────────────────────────────────────────────
+    CSI -->|"@Cacheable (READ)"| CACHE_vets
+    CSI -->|"fill on miss"| CACHE_vets

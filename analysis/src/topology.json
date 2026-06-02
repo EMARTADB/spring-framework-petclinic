@@ -1,0 +1,1994 @@
+{
+  "modules": {
+    "org.springframework.samples.petclinic.PetclinicInitializer": {
+      "fqcn": "org.springframework.samples.petclinic.PetclinicInitializer",
+      "simple": "PetclinicInitializer",
+      "domain": "bootstrap",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.BaseEntity": {
+      "fqcn": "org.springframework.samples.petclinic.model.BaseEntity",
+      "simple": "BaseEntity",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.NamedEntity": {
+      "fqcn": "org.springframework.samples.petclinic.model.NamedEntity",
+      "simple": "NamedEntity",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Owner": {
+      "fqcn": "org.springframework.samples.petclinic.model.Owner",
+      "simple": "Owner",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.package-info": {
+      "fqcn": "org.springframework.samples.petclinic.model.package-info",
+      "simple": "package-info",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Person": {
+      "fqcn": "org.springframework.samples.petclinic.model.Person",
+      "simple": "Person",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Pet": {
+      "fqcn": "org.springframework.samples.petclinic.model.Pet",
+      "simple": "Pet",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.PetType": {
+      "fqcn": "org.springframework.samples.petclinic.model.PetType",
+      "simple": "PetType",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Specialty": {
+      "fqcn": "org.springframework.samples.petclinic.model.Specialty",
+      "simple": "Specialty",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Vet": {
+      "fqcn": "org.springframework.samples.petclinic.model.Vet",
+      "simple": "Vet",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Vets": {
+      "fqcn": "org.springframework.samples.petclinic.model.Vets",
+      "simple": "Vets",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.model.Visit": {
+      "fqcn": "org.springframework.samples.petclinic.model.Visit",
+      "simple": "Visit",
+      "domain": "model",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.OwnerRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.OwnerRepository",
+      "simple": "OwnerRepository",
+      "domain": "repo_interface",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.BaseEntity",
+        "org.springframework.samples.petclinic.model.Owner"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.PetRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.PetRepository",
+      "simple": "PetRepository",
+      "domain": "repo_interface",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.BaseEntity",
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.VetRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.VetRepository",
+      "simple": "VetRepository",
+      "domain": "repo_interface",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Vet"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.VisitRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.VisitRepository",
+      "simple": "VisitRepository",
+      "domain": "repo_interface",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.BaseEntity",
+        "org.springframework.samples.petclinic.model.Visit"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.service.ClinicService": {
+      "fqcn": "org.springframework.samples.petclinic.service.ClinicService",
+      "simple": "ClinicService",
+      "domain": "service",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.model.Vet",
+        "org.springframework.samples.petclinic.model.Visit"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.service.ClinicServiceImpl": {
+      "fqcn": "org.springframework.samples.petclinic.service.ClinicServiceImpl",
+      "simple": "ClinicServiceImpl",
+      "domain": "service",
+      "stereotypes": [
+        "Service"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.model.Vet",
+        "org.springframework.samples.petclinic.model.Visit",
+        "org.springframework.samples.petclinic.repository.OwnerRepository",
+        "org.springframework.samples.petclinic.repository.PetRepository",
+        "org.springframework.samples.petclinic.repository.VetRepository",
+        "org.springframework.samples.petclinic.repository.VisitRepository"
+      ],
+      "injected_types": [
+        [
+          "PetRepository",
+          "petRepository"
+        ],
+        [
+          "VetRepository",
+          "vetRepository"
+        ],
+        [
+          "OwnerRepository",
+          "ownerRepository"
+        ],
+        [
+          "VisitRepository",
+          "visitRepository"
+        ]
+      ],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [
+        "vets"
+      ],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.util.CallMonitoringAspect": {
+      "fqcn": "org.springframework.samples.petclinic.util.CallMonitoringAspect",
+      "simple": "CallMonitoringAspect",
+      "domain": "util",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.util.EntityUtils": {
+      "fqcn": "org.springframework.samples.petclinic.util.EntityUtils",
+      "simple": "EntityUtils",
+      "domain": "util",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.BaseEntity"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.web.CrashController": {
+      "fqcn": "org.springframework.samples.petclinic.web.CrashController",
+      "simple": "CrashController",
+      "domain": "web",
+      "stereotypes": [
+        "Controller"
+      ],
+      "imports": [],
+      "injected_types": [],
+      "routes": [
+        {
+          "verb": "GET",
+          "path": "/oups"
+        }
+      ],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.web.OwnerController": {
+      "fqcn": "org.springframework.samples.petclinic.web.OwnerController",
+      "simple": "OwnerController",
+      "domain": "web",
+      "stereotypes": [
+        "Controller"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.service.ClinicService"
+      ],
+      "injected_types": [
+        [
+          "ClinicService",
+          "clinicService"
+        ]
+      ],
+      "routes": [
+        {
+          "verb": "GET",
+          "path": "/owners/new"
+        },
+        {
+          "verb": "POST",
+          "path": "/owners/new"
+        },
+        {
+          "verb": "GET",
+          "path": "/owners/find"
+        },
+        {
+          "verb": "GET",
+          "path": "/owners"
+        },
+        {
+          "verb": "GET",
+          "path": "/owners/{ownerId"
+        },
+        {
+          "verb": "POST",
+          "path": "/owners/{ownerId"
+        },
+        {
+          "verb": "GET",
+          "path": "/owners/{ownerId"
+        }
+      ],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [
+        "owners/findOwners",
+        "owners/findOwners",
+        "owners/ownersList"
+      ],
+      "redirects": [
+        "owners/",
+        "owners/",
+        "owners/{ownerId}"
+      ]
+    },
+    "org.springframework.samples.petclinic.web.package-info": {
+      "fqcn": "org.springframework.samples.petclinic.web.package-info",
+      "simple": "package-info",
+      "domain": "web",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.web.PetController": {
+      "fqcn": "org.springframework.samples.petclinic.web.PetController",
+      "simple": "PetController",
+      "domain": "web",
+      "stereotypes": [
+        "Controller"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.service.ClinicService"
+      ],
+      "injected_types": [
+        [
+          "ClinicService",
+          "clinicService"
+        ]
+      ],
+      "routes": [
+        {
+          "verb": "REQUEST",
+          "path": "/owners/{ownerId"
+        },
+        {
+          "verb": "GET",
+          "path": "/pets/new"
+        },
+        {
+          "verb": "POST",
+          "path": "/pets/new"
+        },
+        {
+          "verb": "GET",
+          "path": "/pets/{petId"
+        },
+        {
+          "verb": "POST",
+          "path": "/pets/{petId"
+        }
+      ],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": [
+        "owners/{ownerId}",
+        "owners/{ownerId}"
+      ]
+    },
+    "org.springframework.samples.petclinic.web.PetTypeFormatter": {
+      "fqcn": "org.springframework.samples.petclinic.web.PetTypeFormatter",
+      "simple": "PetTypeFormatter",
+      "domain": "web",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.service.ClinicService"
+      ],
+      "injected_types": [
+        [
+          "ClinicService",
+          "clinicService"
+        ]
+      ],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.web.PetValidator": {
+      "fqcn": "org.springframework.samples.petclinic.web.PetValidator",
+      "simple": "PetValidator",
+      "domain": "web",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Pet"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.web.VetController": {
+      "fqcn": "org.springframework.samples.petclinic.web.VetController",
+      "simple": "VetController",
+      "domain": "web",
+      "stereotypes": [
+        "Controller"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Vets",
+        "org.springframework.samples.petclinic.service.ClinicService"
+      ],
+      "injected_types": [
+        [
+          "ClinicService",
+          "clinicService"
+        ]
+      ],
+      "routes": [
+        {
+          "verb": "GET",
+          "path": "/vets"
+        },
+        {
+          "verb": "GET",
+          "path": "/vets.json"
+        },
+        {
+          "verb": "GET",
+          "path": "/vets.xml"
+        }
+      ],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [
+        "vets/vetList"
+      ],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.web.VisitController": {
+      "fqcn": "org.springframework.samples.petclinic.web.VisitController",
+      "simple": "VisitController",
+      "domain": "web",
+      "stereotypes": [
+        "Controller"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.Visit",
+        "org.springframework.samples.petclinic.service.ClinicService"
+      ],
+      "injected_types": [
+        [
+          "ClinicService",
+          "clinicService"
+        ]
+      ],
+      "routes": [
+        {
+          "verb": "GET",
+          "path": "/owners/*/pets/{petId"
+        },
+        {
+          "verb": "POST",
+          "path": "/owners/{ownerId"
+        },
+        {
+          "verb": "GET",
+          "path": "/owners/*/pets/{petId"
+        }
+      ],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [
+        "pets/createOrUpdateVisitForm",
+        "pets/createOrUpdateVisitForm"
+      ],
+      "redirects": [
+        "owners/{ownerId}"
+      ]
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl",
+      "simple": "JdbcOwnerRepositoryImpl",
+      "domain": "repo_jdbc",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.model.Visit",
+        "org.springframework.samples.petclinic.repository.OwnerRepository",
+        "org.springframework.samples.petclinic.util.EntityUtils"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "owners",
+        "pets",
+        "types",
+        "visits"
+      ],
+      "tables_write": [
+        "owners"
+      ],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcPet": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPet",
+      "simple": "JdbcPet",
+      "domain": "repo_jdbc",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Pet"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl",
+      "simple": "JdbcPetRepositoryImpl",
+      "domain": "repo_jdbc",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.repository.OwnerRepository",
+        "org.springframework.samples.petclinic.repository.PetRepository",
+        "org.springframework.samples.petclinic.util.EntityUtils"
+      ],
+      "injected_types": [
+        [
+          "OwnerRepository",
+          "ownerRepository"
+        ]
+      ],
+      "routes": [],
+      "tables_read": [
+        "pets",
+        "types"
+      ],
+      "tables_write": [
+        "pets"
+      ],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcPetRowMapper": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPetRowMapper",
+      "simple": "JdbcPetRowMapper",
+      "domain": "repo_jdbc",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcPetVisitExtractor": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPetVisitExtractor",
+      "simple": "JdbcPetVisitExtractor",
+      "domain": "repo_jdbc",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Visit"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcVetRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcVetRepositoryImpl",
+      "simple": "JdbcVetRepositoryImpl",
+      "domain": "repo_jdbc",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Specialty",
+        "org.springframework.samples.petclinic.model.Vet",
+        "org.springframework.samples.petclinic.repository.VetRepository",
+        "org.springframework.samples.petclinic.util.EntityUtils"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "specialties",
+        "vet_specialties",
+        "vets"
+      ],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRepositoryImpl",
+      "simple": "JdbcVisitRepositoryImpl",
+      "domain": "repo_jdbc",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Visit",
+        "org.springframework.samples.petclinic.repository.VisitRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "pets",
+        "visits"
+      ],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRowMapper": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRowMapper",
+      "simple": "JdbcVisitRowMapper",
+      "domain": "repo_jdbc",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Visit"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.OneToManyResultSetExtractor": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.OneToManyResultSetExtractor",
+      "simple": "OneToManyResultSetExtractor",
+      "domain": "repo_jdbc",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jdbc.package-info": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.package-info",
+      "simple": "package-info",
+      "domain": "repo_jdbc",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl",
+      "simple": "JpaOwnerRepositoryImpl",
+      "domain": "repo_jpa",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.repository.OwnerRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "fetch",
+        "owner"
+      ],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jpa.JpaPetRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jpa.JpaPetRepositoryImpl",
+      "simple": "JpaPetRepositoryImpl",
+      "domain": "repo_jpa",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.repository.PetRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "pettype"
+      ],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jpa.JpaVetRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jpa.JpaVetRepositoryImpl",
+      "simple": "JpaVetRepositoryImpl",
+      "domain": "repo_jpa",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Vet",
+        "org.springframework.samples.petclinic.repository.VetRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "fetch",
+        "vet"
+      ],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jpa.JpaVisitRepositoryImpl": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jpa.JpaVisitRepositoryImpl",
+      "simple": "JpaVisitRepositoryImpl",
+      "domain": "repo_jpa",
+      "stereotypes": [
+        "Repository"
+      ],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Visit",
+        "org.springframework.samples.petclinic.repository.VisitRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [
+        "visit"
+      ],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.jpa.package-info": {
+      "fqcn": "org.springframework.samples.petclinic.repository.jpa.package-info",
+      "simple": "package-info",
+      "domain": "repo_jpa",
+      "stereotypes": [],
+      "imports": [],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository",
+      "simple": "SpringDataOwnerRepository",
+      "domain": "repo_springdata",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Owner",
+        "org.springframework.samples.petclinic.repository.OwnerRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository",
+      "simple": "SpringDataPetRepository",
+      "domain": "repo_springdata",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Pet",
+        "org.springframework.samples.petclinic.model.PetType",
+        "org.springframework.samples.petclinic.repository.PetRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository",
+      "simple": "SpringDataVetRepository",
+      "domain": "repo_springdata",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Vet",
+        "org.springframework.samples.petclinic.repository.VetRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    },
+    "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository": {
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository",
+      "simple": "SpringDataVisitRepository",
+      "domain": "repo_springdata",
+      "stereotypes": [],
+      "imports": [
+        "org.springframework.samples.petclinic.model.Visit",
+        "org.springframework.samples.petclinic.repository.VisitRepository"
+      ],
+      "injected_types": [],
+      "routes": [],
+      "tables_read": [],
+      "tables_write": [],
+      "cache_names": [],
+      "views": [],
+      "redirects": []
+    }
+  },
+  "call_edges": [
+    {
+      "from": "OwnerRepository",
+      "to": "BaseEntity",
+      "type": "import"
+    },
+    {
+      "from": "OwnerRepository",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "PetRepository",
+      "to": "BaseEntity",
+      "type": "import"
+    },
+    {
+      "from": "PetRepository",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "PetRepository",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "VetRepository",
+      "to": "Vet",
+      "type": "import"
+    },
+    {
+      "from": "VisitRepository",
+      "to": "BaseEntity",
+      "type": "import"
+    },
+    {
+      "from": "VisitRepository",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "ClinicService",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "ClinicService",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "ClinicService",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "ClinicService",
+      "to": "Vet",
+      "type": "import"
+    },
+    {
+      "from": "ClinicService",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "Vet",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "OwnerRepository",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "PetRepository",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "VetRepository",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "VisitRepository",
+      "type": "import"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "PetRepository",
+      "type": "di_injection"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "VetRepository",
+      "type": "di_injection"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "OwnerRepository",
+      "type": "di_injection"
+    },
+    {
+      "from": "ClinicServiceImpl",
+      "to": "VisitRepository",
+      "type": "di_injection"
+    },
+    {
+      "from": "EntityUtils",
+      "to": "BaseEntity",
+      "type": "import"
+    },
+    {
+      "from": "OwnerController",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "OwnerController",
+      "to": "ClinicService",
+      "type": "import"
+    },
+    {
+      "from": "OwnerController",
+      "to": "ClinicService",
+      "type": "di_injection"
+    },
+    {
+      "from": "PetController",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "PetController",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "PetController",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "PetController",
+      "to": "ClinicService",
+      "type": "import"
+    },
+    {
+      "from": "PetController",
+      "to": "ClinicService",
+      "type": "di_injection"
+    },
+    {
+      "from": "PetTypeFormatter",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "PetTypeFormatter",
+      "to": "ClinicService",
+      "type": "import"
+    },
+    {
+      "from": "PetTypeFormatter",
+      "to": "ClinicService",
+      "type": "di_injection"
+    },
+    {
+      "from": "PetValidator",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "VetController",
+      "to": "Vets",
+      "type": "import"
+    },
+    {
+      "from": "VetController",
+      "to": "ClinicService",
+      "type": "import"
+    },
+    {
+      "from": "VetController",
+      "to": "ClinicService",
+      "type": "di_injection"
+    },
+    {
+      "from": "VisitController",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "VisitController",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "VisitController",
+      "to": "ClinicService",
+      "type": "import"
+    },
+    {
+      "from": "VisitController",
+      "to": "ClinicService",
+      "type": "di_injection"
+    },
+    {
+      "from": "JdbcOwnerRepositoryImpl",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "JdbcOwnerRepositoryImpl",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "JdbcOwnerRepositoryImpl",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "JdbcOwnerRepositoryImpl",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "JdbcOwnerRepositoryImpl",
+      "to": "OwnerRepository",
+      "type": "import"
+    },
+    {
+      "from": "JdbcOwnerRepositoryImpl",
+      "to": "EntityUtils",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPet",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "OwnerRepository",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "PetRepository",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "EntityUtils",
+      "type": "import"
+    },
+    {
+      "from": "JdbcPetRepositoryImpl",
+      "to": "OwnerRepository",
+      "type": "di_injection"
+    },
+    {
+      "from": "JdbcPetVisitExtractor",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVetRepositoryImpl",
+      "to": "Specialty",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVetRepositoryImpl",
+      "to": "Vet",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVetRepositoryImpl",
+      "to": "VetRepository",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVetRepositoryImpl",
+      "to": "EntityUtils",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVisitRepositoryImpl",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVisitRepositoryImpl",
+      "to": "VisitRepository",
+      "type": "import"
+    },
+    {
+      "from": "JdbcVisitRowMapper",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "JpaOwnerRepositoryImpl",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "JpaOwnerRepositoryImpl",
+      "to": "OwnerRepository",
+      "type": "import"
+    },
+    {
+      "from": "JpaPetRepositoryImpl",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "JpaPetRepositoryImpl",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "JpaPetRepositoryImpl",
+      "to": "PetRepository",
+      "type": "import"
+    },
+    {
+      "from": "JpaVetRepositoryImpl",
+      "to": "Vet",
+      "type": "import"
+    },
+    {
+      "from": "JpaVetRepositoryImpl",
+      "to": "VetRepository",
+      "type": "import"
+    },
+    {
+      "from": "JpaVisitRepositoryImpl",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "JpaVisitRepositoryImpl",
+      "to": "VisitRepository",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataOwnerRepository",
+      "to": "Owner",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataOwnerRepository",
+      "to": "OwnerRepository",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataPetRepository",
+      "to": "Pet",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataPetRepository",
+      "to": "PetType",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataPetRepository",
+      "to": "PetRepository",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataVetRepository",
+      "to": "Vet",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataVetRepository",
+      "to": "VetRepository",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataVisitRepository",
+      "to": "Visit",
+      "type": "import"
+    },
+    {
+      "from": "SpringDataVisitRepository",
+      "to": "VisitRepository",
+      "type": "import"
+    }
+  ],
+  "data_edges": [
+    {
+      "module": "OwnerRepository",
+      "table": "owners",
+      "access": "read",
+      "domain": "repo_interface"
+    },
+    {
+      "module": "PetRepository",
+      "table": "pets",
+      "access": "read",
+      "domain": "repo_interface"
+    },
+    {
+      "module": "PetRepository",
+      "table": "types",
+      "access": "read",
+      "domain": "repo_interface"
+    },
+    {
+      "module": "VetRepository",
+      "table": "vets",
+      "access": "read",
+      "domain": "repo_interface"
+    },
+    {
+      "module": "VisitRepository",
+      "table": "visits",
+      "access": "read",
+      "domain": "repo_interface"
+    },
+    {
+      "module": "ClinicServiceImpl",
+      "table": "cache:vets",
+      "access": "read_write",
+      "domain": "service"
+    },
+    {
+      "module": "JdbcOwnerRepositoryImpl",
+      "table": "owners",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcOwnerRepositoryImpl",
+      "table": "pets",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcOwnerRepositoryImpl",
+      "table": "types",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcOwnerRepositoryImpl",
+      "table": "visits",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcOwnerRepositoryImpl",
+      "table": "owners",
+      "access": "write",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcPetRepositoryImpl",
+      "table": "pets",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcPetRepositoryImpl",
+      "table": "types",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcPetRepositoryImpl",
+      "table": "pets",
+      "access": "write",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcVetRepositoryImpl",
+      "table": "specialties",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcVetRepositoryImpl",
+      "table": "vet_specialties",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcVetRepositoryImpl",
+      "table": "vets",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcVisitRepositoryImpl",
+      "table": "pets",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JdbcVisitRepositoryImpl",
+      "table": "visits",
+      "access": "read",
+      "domain": "repo_jdbc"
+    },
+    {
+      "module": "JpaOwnerRepositoryImpl",
+      "table": "owners",
+      "access": "read",
+      "domain": "repo_jpa"
+    },
+    {
+      "module": "JpaPetRepositoryImpl",
+      "table": "types",
+      "access": "read",
+      "domain": "repo_jpa"
+    },
+    {
+      "module": "JpaPetRepositoryImpl",
+      "table": "pets",
+      "access": "read",
+      "domain": "repo_jpa"
+    },
+    {
+      "module": "JpaVetRepositoryImpl",
+      "table": "vets",
+      "access": "read",
+      "domain": "repo_jpa"
+    },
+    {
+      "module": "JpaVisitRepositoryImpl",
+      "table": "visits",
+      "access": "read",
+      "domain": "repo_jpa"
+    },
+    {
+      "module": "SpringDataOwnerRepository",
+      "table": "owners",
+      "access": "read",
+      "domain": "repo_springdata"
+    },
+    {
+      "module": "SpringDataPetRepository",
+      "table": "pets",
+      "access": "read",
+      "domain": "repo_springdata"
+    },
+    {
+      "module": "SpringDataPetRepository",
+      "table": "types",
+      "access": "read",
+      "domain": "repo_springdata"
+    },
+    {
+      "module": "SpringDataVetRepository",
+      "table": "vets",
+      "access": "read",
+      "domain": "repo_springdata"
+    },
+    {
+      "module": "SpringDataVisitRepository",
+      "table": "visits",
+      "access": "read",
+      "domain": "repo_springdata"
+    }
+  ],
+  "entry_points": [
+    {
+      "type": "http",
+      "path": "/oups",
+      "verb": "GET",
+      "controller": "CrashController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/new",
+      "verb": "GET",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/new",
+      "verb": "POST",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/find",
+      "verb": "GET",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners",
+      "verb": "GET",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/{ownerId",
+      "verb": "GET",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/{ownerId",
+      "verb": "POST",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/{ownerId",
+      "verb": "GET",
+      "controller": "OwnerController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/{ownerId",
+      "verb": "REQUEST",
+      "controller": "PetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/pets/new",
+      "verb": "GET",
+      "controller": "PetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/pets/new",
+      "verb": "POST",
+      "controller": "PetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/pets/{petId",
+      "verb": "GET",
+      "controller": "PetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/pets/{petId",
+      "verb": "POST",
+      "controller": "PetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/vets",
+      "verb": "GET",
+      "controller": "VetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/vets.json",
+      "verb": "GET",
+      "controller": "VetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/vets.xml",
+      "verb": "GET",
+      "controller": "VetController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/*/pets/{petId",
+      "verb": "GET",
+      "controller": "VisitController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/{ownerId",
+      "verb": "POST",
+      "controller": "VisitController",
+      "domain": "web"
+    },
+    {
+      "type": "http",
+      "path": "/owners/*/pets/{petId",
+      "verb": "GET",
+      "controller": "VisitController",
+      "domain": "web"
+    },
+    {
+      "type": "http_static",
+      "path": "/",
+      "verb": "GET",
+      "controller": "MvcViewConfig",
+      "view": "welcome",
+      "domain": "bootstrap"
+    },
+    {
+      "type": "servlet_dispatcher",
+      "path": [],
+      "controller": "PetclinicInitializer",
+      "domain": "bootstrap"
+    }
+  ],
+  "dead_candidates": [
+    {
+      "module": "CallMonitoringAspect",
+      "domain": "util",
+      "fqcn": "org.springframework.samples.petclinic.util.CallMonitoringAspect",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "PetTypeFormatter",
+      "domain": "web",
+      "fqcn": "org.springframework.samples.petclinic.web.PetTypeFormatter",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "PetValidator",
+      "domain": "web",
+      "fqcn": "org.springframework.samples.petclinic.web.PetValidator",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "JdbcPet",
+      "domain": "repo_jdbc",
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPet",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "JdbcPetRowMapper",
+      "domain": "repo_jdbc",
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPetRowMapper",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "JdbcPetVisitExtractor",
+      "domain": "repo_jdbc",
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcPetVisitExtractor",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "JdbcVisitRowMapper",
+      "domain": "repo_jdbc",
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRowMapper",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "OneToManyResultSetExtractor",
+      "domain": "repo_jdbc",
+      "fqcn": "org.springframework.samples.petclinic.repository.jdbc.OneToManyResultSetExtractor",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "SpringDataOwnerRepository",
+      "domain": "repo_springdata",
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "SpringDataPetRepository",
+      "domain": "repo_springdata",
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "SpringDataVetRepository",
+      "domain": "repo_springdata",
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    },
+    {
+      "module": "SpringDataVisitRepository",
+      "domain": "repo_springdata",
+      "fqcn": "org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository",
+      "note": "No inbound call edge; not a Spring-managed bean"
+    }
+  ],
+  "views": {
+    "exception": {
+      "name": "exception",
+      "rel_path": "WEB-INF\\jsp\\exception.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "welcome": {
+      "name": "welcome",
+      "rel_path": "WEB-INF\\jsp\\welcome.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "createOrUpdateOwnerForm": {
+      "name": "createOrUpdateOwnerForm",
+      "rel_path": "WEB-INF\\jsp\\owners\\createOrUpdateOwnerForm.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "findOwners": {
+      "name": "findOwners",
+      "rel_path": "WEB-INF\\jsp\\owners\\findOwners.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "ownerDetails": {
+      "name": "ownerDetails",
+      "rel_path": "WEB-INF\\jsp\\owners\\ownerDetails.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "ownersList": {
+      "name": "ownersList",
+      "rel_path": "WEB-INF\\jsp\\owners\\ownersList.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "createOrUpdatePetForm": {
+      "name": "createOrUpdatePetForm",
+      "rel_path": "WEB-INF\\jsp\\pets\\createOrUpdatePetForm.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "createOrUpdateVisitForm": {
+      "name": "createOrUpdateVisitForm",
+      "rel_path": "WEB-INF\\jsp\\pets\\createOrUpdateVisitForm.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "vetList": {
+      "name": "vetList",
+      "rel_path": "WEB-INF\\jsp\\vets\\vetList.jsp",
+      "domain": "view",
+      "includes": [],
+      "uses_layout": true
+    },
+    "tag:bodyHeader": {
+      "name": "tag:bodyHeader",
+      "rel_path": "WEB-INF\\tags\\bodyHeader.tag",
+      "domain": "view_tag"
+    },
+    "tag:footer": {
+      "name": "tag:footer",
+      "rel_path": "WEB-INF\\tags\\footer.tag",
+      "domain": "view_tag"
+    },
+    "tag:htmlHeader": {
+      "name": "tag:htmlHeader",
+      "rel_path": "WEB-INF\\tags\\htmlHeader.tag",
+      "domain": "view_tag"
+    },
+    "tag:inputField": {
+      "name": "tag:inputField",
+      "rel_path": "WEB-INF\\tags\\inputField.tag",
+      "domain": "view_tag"
+    },
+    "tag:layout": {
+      "name": "tag:layout",
+      "rel_path": "WEB-INF\\tags\\layout.tag",
+      "domain": "view_tag"
+    },
+    "tag:localDate": {
+      "name": "tag:localDate",
+      "rel_path": "WEB-INF\\tags\\localDate.tag",
+      "domain": "view_tag"
+    },
+    "tag:menu": {
+      "name": "tag:menu",
+      "rel_path": "WEB-INF\\tags\\menu.tag",
+      "domain": "view_tag"
+    },
+    "tag:menuItem": {
+      "name": "tag:menuItem",
+      "rel_path": "WEB-INF\\tags\\menuItem.tag",
+      "domain": "view_tag"
+    },
+    "tag:pivotal": {
+      "name": "tag:pivotal",
+      "rel_path": "WEB-INF\\tags\\pivotal.tag",
+      "domain": "view_tag"
+    },
+    "tag:selectField": {
+      "name": "tag:selectField",
+      "rel_path": "WEB-INF\\tags\\selectField.tag",
+      "domain": "view_tag"
+    }
+  },
+  "tables": [
+    "vets",
+    "specialties",
+    "vet_specialties",
+    "types",
+    "owners",
+    "pets",
+    "visits"
+  ],
+  "spring_config": [
+    {
+      "component_scans": [
+        "org.springframework.samples.petclinic.service",
+        "org.springframework.samples.petclinic.repository.jdbc",
+        "org.springframework.samples.petclinic.repository.jpa"
+      ],
+      "jpa_repos": [
+        "org.springframework.samples.petclinic.repository.springdatajpa"
+      ],
+      "profiles": [
+        "jpa,spring-data-jpa",
+        "jdbc",
+        "jpa",
+        "spring-data-jpa"
+      ],
+      "mvc_view_controllers": [],
+      "exception_views": [],
+      "file": "src\\main\\resources\\spring\\business-config.xml"
+    },
+    {
+      "component_scans": [],
+      "jpa_repos": [],
+      "profiles": [
+        "javaee"
+      ],
+      "mvc_view_controllers": [],
+      "exception_views": [],
+      "file": "src\\main\\resources\\spring\\datasource-config.xml"
+    },
+    {
+      "component_scans": [
+        "org.springframework.samples.petclinic.web"
+      ],
+      "jpa_repos": [],
+      "profiles": [],
+      "mvc_view_controllers": [
+        [
+          "/",
+          "welcome"
+        ]
+      ],
+      "exception_views": [
+        "exception"
+      ],
+      "file": "src\\main\\resources\\spring\\mvc-core-config.xml"
+    },
+    {
+      "component_scans": [],
+      "jpa_repos": [],
+      "profiles": [],
+      "mvc_view_controllers": [],
+      "exception_views": [],
+      "file": "src\\main\\resources\\spring\\mvc-view-config.xml"
+    },
+    {
+      "component_scans": [],
+      "jpa_repos": [],
+      "profiles": [],
+      "mvc_view_controllers": [],
+      "exception_views": [],
+      "file": "src\\main\\resources\\spring\\tools-config.xml"
+    }
+  ],
+  "init_info": {
+    "default_profile": "jpa",
+    "servlet_mappings": []
+  }
+}

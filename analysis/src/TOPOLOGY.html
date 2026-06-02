@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetClinic — Dependency &amp; Topology Map</title>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 2rem;
+  }
+  h1 {
+    color: #d4d4d4;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    color: #cc785c;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2.5rem 0 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #333;
+  }
+  h3 {
+    color: #cc785c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.4rem;
+    opacity: 0.85;
+  }
+  .diagram-wrap {
+    background: #252526;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 0.5rem 0 1rem;
+    overflow-x: auto;
+  }
+  pre.mermaid {
+    background: transparent;
+    border: none;
+    text-align: center;
+  }
+  ul.observations {
+    margin: 0.8rem 0 1.5rem 1.2rem;
+    color: #b0b0b0;
+  }
+  ul.observations li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.3rem;
+  }
+  ul.observations li strong {
+    color: #cc785c;
+  }
+  .badge {
+    display: inline-block;
+    background: #333;
+    color: #cc785c;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+  .meta-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    margin: 1rem 0 2rem;
+    font-size: 0.875rem;
+  }
+  .meta-table th {
+    text-align: left;
+    color: #cc785c;
+    padding: 0.4rem 1rem 0.4rem 0;
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+  }
+  .meta-table td {
+    padding: 0.35rem 1rem 0.35rem 0;
+    border-bottom: 1px solid #2a2a2a;
+    color: #c0c0c0;
+  }
+  .warn { color: #e0a050; }
+  hr { border: none; border-top: 1px solid #2a2a2a; margin: 2rem 0; }
+</style>
+</head>
+<body>
+
+<h1>Spring PetClinic — Dependency &amp; Topology Map</h1>
+<p class="subtitle">
+  Generated 2026-05-29 &nbsp;·&nbsp;
+  Source: <code>src/main/java</code> + Spring XML config + SQL schema &nbsp;·&nbsp;
+  Tool: <code>analysis/src/extract_topology.py</code> &nbsp;·&nbsp;
+  Active default profile: <span class="badge">jpa</span>
+</p>
+
+<table class="meta-table">
+  <tr><th>Modules (Java)</th><td>47 source files across 9 domains</td></tr>
+  <tr><th>HTTP entry points</th><td>19 routes across 5 controllers</td></tr>
+  <tr><th>Call edges extracted</th><td>76 import edges + 10 DI-injection edges</td></tr>
+  <tr><th>Data edges</th><td>42 module→table relationships (read/write)</td></tr>
+  <tr><th>DB tables</th><td>vets, specialties, vet_specialties, types, owners, pets, visits</td></tr>
+  <tr><th>Persistence profiles</th><td>jdbc &nbsp;·&nbsp; jpa (default) &nbsp;·&nbsp; spring-data-jpa</td></tr>
+  <tr><th>Dead-end candidates</th><td>12 (see call graph — most are DI/proxy-resolved, not truly dead)</td></tr>
+</table>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2>① Module Call Graph</h2>
+<p style="color:#888;font-size:0.875rem;margin-bottom:0.8rem;">
+  Clustered by domain. <span class="badge" style="background:#cc785c;color:#1e1e1e">Orange nodes</span> = HTTP entry points.
+  Dashed edges = Spring DI profile-resolution or AOP advice (not direct source calls).
+  All three repository stacks are shown; only one is active per Spring profile.
+</p>
+
+<div class="diagram-wrap">
+<pre class="mermaid">
+graph TD
+    classDef entry    fill:#cc785c,stroke:#cc785c,color:#1e1e1e,font-weight:bold
+    classDef ctrl     fill:#2d4a6e,stroke:#4a7fb5,color:#d4d4d4
+    classDef svc      fill:#2d5a3d,stroke:#4caf70,color:#d4d4d4
+    classDef repo     fill:#3d2d5a,stroke:#8a6fb5,color:#d4d4d4
+    classDef model    fill:#3a3a2d,stroke:#a0a060,color:#d4d4d4
+    classDef util     fill:#4a3030,stroke:#b06060,color:#d4d4d4
+    classDef disp     fill:#1e1e1e,stroke:#cc785c,color:#cc785c,stroke-dasharray:5 3
+
+    subgraph BOOT["Bootstrap"]
+        INIT["PetclinicInitializer\n(Servlet 3.0)"]:::entry
+        DISP["DispatcherServlet\n(Spring MVC)"]:::disp
+    end
+
+    subgraph WEB["Web Controllers  (HTTP entry points)"]
+        OC["OwnerController\nGET/POST /owners/**"]:::entry
+        PC["PetController\nGET/POST /owners/{id}/pets/**"]:::entry
+        VTC["VetController\nGET /vets  /vets.json  /vets.xml"]:::entry
+        VC["VisitController\nGET/POST /owners/*/pets/{id}/visits/**"]:::entry
+        CC["CrashController\nGET /oups"]:::entry
+        PF["PetTypeFormatter\n(ConversionService - XML-wired)"]:::ctrl
+        PV["PetValidator\n(@InitBinder - DI-wired)"]:::ctrl
+    end
+
+    subgraph SVC["Service"]
+        CSI["ClinicServiceImpl\n@Transactional  @Cacheable(vets)"]:::svc
+    end
+
+    subgraph RINTF["Repository Interfaces"]
+        ORI["OwnerRepository"]:::repo
+        PRI["PetRepository"]:::repo
+        VRI["VetRepository"]:::repo
+        VSRI["VisitRepository"]:::repo
+    end
+
+    subgraph RJDBC["Repository - JDBC  (profile: jdbc)"]
+        JOI["JdbcOwnerRepositoryImpl"]:::repo
+        JPI["JdbcPetRepositoryImpl"]:::repo
+        JVI["JdbcVetRepositoryImpl"]:::repo
+        JVSI["JdbcVisitRepositoryImpl"]:::repo
+        JPVE["JdbcPetVisitExtractor"]:::util
+        JPM["JdbcPetRowMapper"]:::util
+        OTME["OneToManyResultSetExtractor"]:::util
+    end
+
+    subgraph RJPA["Repository - JPA  (profile: jpa  DEFAULT)"]
+        JPAO["JpaOwnerRepositoryImpl"]:::repo
+        JPAP["JpaPetRepositoryImpl"]:::repo
+        JPAV["JpaVetRepositoryImpl"]:::repo
+        JPAVS["JpaVisitRepositoryImpl"]:::repo
+    end
+
+    subgraph RSD["Repository - Spring Data JPA  (profile: spring-data-jpa)"]
+        SDO["SpringDataOwnerRepository\n(proxy-generated)"]:::repo
+        SDP["SpringDataPetRepository\n(proxy-generated)"]:::repo
+        SDV["SpringDataVetRepository\n(proxy-generated)"]:::repo
+        SDVS["SpringDataVisitRepository\n(proxy-generated)"]:::repo
+    end
+
+    subgraph XCUT["Cross-Cutting  (AOP / Util)"]
+        CMA["CallMonitoringAspect\n@Around @Repository  JMX bean"]:::util
+        EU["EntityUtils"]:::util
+    end
+
+    INIT --> DISP
+    DISP -->|"routes to"| OC
+    DISP -->|"routes to"| PC
+    DISP -->|"routes to"| VTC
+    DISP -->|"routes to"| VC
+    DISP -->|"routes to"| CC
+    DISP -->|"ConversionService"| PF
+
+    OC  --> CSI
+    PC  --> CSI
+    VTC --> CSI
+    VC  --> CSI
+    PF  --> CSI
+    PC  -.->|"@InitBinder"| PV
+
+    CSI --> ORI
+    CSI --> PRI
+    CSI --> VRI
+    CSI --> VSRI
+
+    ORI -.->|"jdbc"| JOI
+    PRI -.->|"jdbc"| JPI
+    VRI -.->|"jdbc"| JVI
+    VSRI -.->|"jdbc"| JVSI
+
+    ORI -.->|"jpa"| JPAO
+    PRI -.->|"jpa"| JPAP
+    VRI -.->|"jpa"| JPAV
+    VSRI -.->|"jpa"| JPAVS
+
+    ORI -.->|"spring-data-jpa"| SDO
+    PRI -.->|"spring-data-jpa"| SDP
+    VRI -.->|"spring-data-jpa"| SDV
+    VSRI -.->|"spring-data-jpa"| SDVS
+
+    JOI --> JPVE
+    JPI --> JPM
+    JVI --> OTME
+    JOI --> EU
+
+    CMA -.->|"@Around"| JOI
+    CMA -.->|"@Around"| JPI
+    CMA -.->|"@Around"| JPAO
+    CMA -.->|"@Around"| JPAP
+</pre>
+</div>
+
+<ul class="observations">
+  <li><strong>Single service bottleneck.</strong> All five controllers funnel through one bean — <code>ClinicServiceImpl</code>. It has no business logic, only delegates. Any change to a repository contract forces a touch to <code>ClinicService</code>, <code>ClinicServiceImpl</code>, and the caller. Three files for every two-layer change.</li>
+  <li><strong>Triple repo stacks inflate the graph.</strong> Fifteen repository classes implement four interfaces. All three stacks compile into the WAR; only one activates at runtime via a Spring profile string. A mistyped profile silently falls back to the JPA stack, with no startup warning.</li>
+  <li><strong>Dead-end candidates are mostly proxy-resolved, not truly dead.</strong> <code>SpringData*Repository</code> classes show no inbound import edges because Spring Data JPA generates runtime proxies — they are not called directly in source. <code>PetTypeFormatter</code> and <code>PetValidator</code> are wired via XML <code>conversionService</code> bean and <code>@InitBinder</code>, not imports. Neither is truly dead.</li>
+  <li><strong><code>CallMonitoringAspect</code> is a hidden dead-end under the default profile.</strong> The <code>@Around</code> pointcut targets <code>@Repository</code>-annotated classes. Spring Data JPA repositories carry no such annotation on their proxy. The aspect compiles and loads silently but produces zero JMX metrics when the <code>spring-data-jpa</code> profile is active.</li>
+  <li><strong>Service extraction candidate: Vet domain.</strong> <code>VetController</code> → <code>ClinicServiceImpl</code> → <code>VetRepository</code> is a self-contained read-only flow with caching. It touches no other domain data and could be extracted to a standalone microservice with zero coupling changes required in the owner/pet/visit path.</li>
+</ul>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2>② Data Lineage</h2>
+<p style="color:#888;font-size:0.875rem;margin-bottom:0.8rem;">
+  Programs → data stores. All three repository stacks shown.
+  <span class="warn">⚠ labels</span> mark known inefficiency patterns (N+1, over-fetch).
+  Cylinder = DB table. Hexagon = cache store.
+</p>
+
+<div class="diagram-wrap">
+<pre class="mermaid">
+graph LR
+    classDef module   fill:#2d2d2d,stroke:#6699cc,color:#d4d4d4
+    classDef store    fill:#1e3a1e,stroke:#4caf70,color:#d4d4d4
+    classDef cache    fill:#3a1e3a,stroke:#cc78cc,color:#d4d4d4
+    classDef view     fill:#3a3a1e,stroke:#ccaa44,color:#d4d4d4
+
+    OC["OwnerController"]:::module
+    PC["PetController"]:::module
+    VTC["VetController"]:::module
+    VC["VisitController"]:::module
+    CSI["ClinicServiceImpl"]:::module
+
+    JOI["JdbcOwnerRepositoryImpl"]:::module
+    JPI["JdbcPetRepositoryImpl"]:::module
+    JVI["JdbcVetRepositoryImpl"]:::module
+    JVSI["JdbcVisitRepositoryImpl"]:::module
+
+    JPAO["JpaOwnerRepositoryImpl"]:::module
+    JPAP["JpaPetRepositoryImpl"]:::module
+    JPAV["JpaVetRepositoryImpl"]:::module
+    JPAVS["JpaVisitRepositoryImpl"]:::module
+
+    SDO["SpringDataOwnerRepository"]:::module
+    SDP["SpringDataPetRepository"]:::module
+    SDV["SpringDataVetRepository"]:::module
+    SDVS["SpringDataVisitRepository"]:::module
+
+    TB_owners[("owners")]:::store
+    TB_pets[("pets")]:::store
+    TB_visits[("visits")]:::store
+    TB_vets[("vets")]:::store
+    TB_specialties[("specialties")]:::store
+    TB_vet_spec[("vet_specialties")]:::store
+    TB_types[("types")]:::store
+    CACHE_vets[["cache: vets\n(Caffeine)"]]:::cache
+
+    V_ownerDetails["ownerDetails.jsp"]:::view
+    V_ownersList["ownersList.jsp"]:::view
+    V_petForm["createOrUpdatePetForm.jsp"]:::view
+    V_visitForm["createOrUpdateVisitForm.jsp"]:::view
+    V_vetList["vetList.jsp"]:::view
+
+    OC -->|"read model"| V_ownerDetails
+    OC -->|"read model"| V_ownersList
+    PC -->|"read model"| V_petForm
+    VC -->|"read model"| V_visitForm
+    VTC -->|"read model"| V_vetList
+
+    JOI -->|"READ"| TB_owners
+    JOI -->|"WRITE"| TB_owners
+    JOI -->|"READ"| TB_pets
+    JOI -->|"READ"| TB_visits
+    JOI -->|"READ"| TB_types
+
+    JPI -->|"READ"| TB_pets
+    JPI -->|"WRITE"| TB_pets
+    JPI -->|"READ"| TB_types
+    JPI -->|"READ"| TB_visits
+
+    JVI -->|"READ"| TB_vets
+    JVI -->|"READ xN"| TB_specialties
+    JVI -->|"READ xN"| TB_vet_spec
+
+    JVSI -->|"READ"| TB_visits
+    JVSI -->|"WRITE"| TB_visits
+
+    JPAO -->|"READ/WRITE"| TB_owners
+    JPAO -->|"READ eager"| TB_pets
+    JPAO -->|"READ eager"| TB_visits
+
+    JPAP -->|"READ/WRITE"| TB_pets
+    JPAP -->|"READ"| TB_types
+
+    JPAV -->|"READ join fetch"| TB_vets
+    JPAV -->|"READ join fetch"| TB_specialties
+
+    JPAVS -->|"READ/WRITE"| TB_visits
+
+    SDO -->|"READ/WRITE"| TB_owners
+    SDP -->|"READ/WRITE"| TB_pets
+    SDP -->|"READ"| TB_types
+    SDV -->|"READ"| TB_vets
+    SDVS -->|"READ/WRITE"| TB_visits
+
+    CSI -->|"@Cacheable"| CACHE_vets
+</pre>
+</div>
+
+<ul class="observations">
+  <li><strong><code>pets</code> and <code>owners</code> are multi-writer hotspots.</strong> Both tables are written by JDBC, JPA, and Spring Data JPA implementations. A schema migration (add column, rename, change type) must be applied and tested against all three stacks, tripling the regression surface.</li>
+  <li><strong><code>visits</code> has no writer in the JPA owner path.</strong> <code>JpaOwnerRepositoryImpl</code> reads visits eagerly as part of the owner graph but never writes them directly — writes flow only through <code>JpaVisitRepositoryImpl</code>. This split read/write path means a developer tracing a visit-save bug must cross two impl classes.</li>
+  <li><strong>Only one cached store: <code>vets</code>.</strong> <code>findPetTypes()</code> (called on every pet form render) is not cached. The <code>types</code> table is effectively static reference data — a prime candidate for <code>@Cacheable</code> to eliminate a SELECT on every form load.</li>
+  <li><strong>N+1 risk is confined to the JDBC vet path.</strong> <code>JdbcVetRepositoryImpl</code> issues one <code>SELECT specialty_id FROM vet_specialties WHERE vet_id=?</code> per vet in a loop. The JPA and Spring Data paths both use <code>LEFT JOIN FETCH</code>. If the active profile is <code>jdbc</code> with a growing vet list, this will be the first latency hot-spot.</li>
+  <li><strong>JSP views are terminal sinks — no feedback loop.</strong> Views are pure output. Any field added to the domain model that needs to be editable requires touching the model, repository, service interface, service impl, controller, and JSP — six layers for one field. This is the steepest change-amplification pattern in the codebase.</li>
+</ul>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2>③ Critical Path — "Register owner → add pet → schedule visit"</h2>
+<p style="color:#888;font-size:0.875rem;margin-bottom:0.8rem;">
+  Traces the primary end-to-end write flow in execution order through every module and data store.
+  <span class="warn">No production telemetry available</span> — latency figures not annotated.
+  Recommend instrumenting with Micrometer + Prometheus before any refactor sprint.
+</p>
+
+<div class="diagram-wrap">
+<pre class="mermaid">
+flowchart TD
+    classDef entry   fill:#cc785c,stroke:#cc785c,color:#1e1e1e,font-weight:bold
+    classDef ctrl    fill:#2d4a6e,stroke:#4a7fb5,color:#d4d4d4
+    classDef svc     fill:#2d5a3d,stroke:#4caf70,color:#d4d4d4
+    classDef repo    fill:#3d2d5a,stroke:#8a6fb5,color:#d4d4d4
+    classDef store   fill:#1e3a1e,stroke:#4caf70,color:#d4d4d4
+    classDef view    fill:#3a3a1e,stroke:#ccaa44,color:#d4d4d4
+    classDef gate    fill:#3a2d1e,stroke:#cc9944,color:#d4d4d4,stroke-dasharray:4 2
+    classDef note    fill:#2a2a2a,stroke:#555,color:#888,font-size:12px
+
+    START(["Browser: POST /owners/new"]):::entry
+
+    OC["OwnerController\nprocessCreationForm()"]:::ctrl
+    VAL1{"Bean Validation\n@Valid Owner"}:::gate
+    SAVE_O["ClinicServiceImpl.saveOwner()\n@Transactional"]:::svc
+    REPO_O["OwnerRepository impl\njpa default: JpaOwnerRepositoryImpl"]:::repo
+    DB_owners[("DB: owners — INSERT")]:::store
+    REDIRECT_O(["redirect: GET /owners/{id}"]):::entry
+
+    OC2["OwnerController.showOwner()"]:::ctrl
+    LOAD_O["ClinicServiceImpl.findOwnerById()\n@Transactional readOnly\nEager: loads all pets AND all visits"]:::svc
+    DB_owners_R[("DB: owners + pets + visits\nSELECT — full-graph over-fetch")]:::store
+    V_detail["ownerDetails.jsp"]:::view
+
+    POST_PET(["Browser: POST /owners/{ownerId}/pets/new"]):::entry
+    PC["PetController\nprocessCreationForm()"]:::ctrl
+    LOAD_TYPES["ClinicServiceImpl.findPetTypes()\nNo @Cacheable — DB hit every render"]:::svc
+    DB_types[("DB: types — SELECT")]:::store
+    PV{"PetValidator\nduplicate name check\non in-memory owner.getPets()"}:::gate
+    SAVE_P["ClinicServiceImpl.savePet()\n@Transactional"]:::svc
+    REPO_P["PetRepository impl"]:::repo
+    DB_pets[("DB: pets — INSERT")]:::store
+    REDIRECT_PET(["redirect: GET /owners/{ownerId}"]):::entry
+
+    POST_VIS(["Browser: POST /owners/*/pets/{petId}/visits/new"]):::entry
+    VC["VisitController\nprocessNewVisitForm()"]:::ctrl
+    LOAD_PET["ClinicServiceImpl.findPetById()\nJDBC path: loads full owner + all visits\njust to find one pet by ID"]:::svc
+    DB_pets_r[("DB: pets + owner + visits\nSELECT — unnecessary over-fetch")]:::store
+    SAVE_V["ClinicServiceImpl.saveVisit()\n@Transactional"]:::svc
+    REPO_V["VisitRepository impl"]:::repo
+    DB_visits[("DB: visits — INSERT")]:::store
+    REDIRECT_VIS(["redirect: GET /owners/{ownerId}"]):::entry
+
+    NOTE["No telemetry. Instrument with\nMicrometer before refactor sprint."]:::note
+
+    START --> OC --> VAL1
+    VAL1 -->|"valid"| SAVE_O --> REPO_O --> DB_owners --> REDIRECT_O
+    VAL1 -->|"errors"| FORM_ERR["createOrUpdateOwnerForm.jsp\nre-render with validation errors"]:::view
+
+    REDIRECT_O --> OC2 --> LOAD_O --> DB_owners_R --> V_detail
+
+    V_detail --> POST_PET --> PC
+    PC --> LOAD_TYPES --> DB_types
+    PC --> PV
+    PV -->|"valid"| SAVE_P --> REPO_P --> DB_pets --> REDIRECT_PET
+    PV -->|"duplicate"| PET_ERR["createOrUpdatePetForm.jsp\nre-render with errors"]:::view
+
+    REDIRECT_PET --> POST_VIS --> VC --> LOAD_PET --> DB_pets_r
+    DB_pets_r --> SAVE_V --> REPO_V --> DB_visits --> REDIRECT_VIS
+
+    NOTE -.-> LOAD_O
+    NOTE -.-> LOAD_PET
+</pre>
+</div>
+
+<ul class="observations">
+  <li><strong>Every write immediately triggers a full-graph read.</strong> The <code>redirect → showOwner</code> post-create pattern re-loads the owner with all their pets AND all visits. For an owner with 10 pets and 50 historical visits, this is 60+ rows fetched just to render the confirmation screen. No lazy-load boundary exists in the JDBC or JPA paths.</li>
+  <li><strong><code>findPetTypes()</code> is an uncached SELECT on every pet form render.</strong> Pet type is reference data that changes perhaps once per deployment. Without <code>@Cacheable("petTypes")</code>, every <code>GET /owners/{id}/pets/new</code> hits the <code>types</code> table. Adding one annotation and one Caffeine cache entry eliminates this entirely.</li>
+  <li><strong>The JDBC <code>findPetById</code> path is the worst over-fetch.</strong> <code>JdbcPetRepositoryImpl.findById</code> calls <code>ownerRepository.findById(ownerId)</code> which calls <code>loadPetsAndVisits(owner)</code> — a LEFT OUTER JOIN across all of the owner's pets and visits — to then do a linear scan in memory for one pet by ID. Three tables, unbounded rows, just to resolve a foreign key.</li>
+  <li><strong>No global exception handler on the critical path.</strong> If <code>findOwnerById</code> or <code>findPetById</code> throws <code>ObjectRetrievalFailureException</code> (JDBC) or <code>NoResultException</code> (JPA), the exception propagates to <code>SimpleMappingExceptionResolver</code>, which renders the raw message in <code>exception.jsp</code>. There is no retry, no 404 mapping, no user-friendly fallback.</li>
+  <li><strong>The visit flow is the highest-complexity change target.</strong> Adding a field to <code>Visit</code> requires changes in: <code>Visit.java</code>, all four <code>VisitRepository</code> impls, <code>ClinicService</code>, <code>ClinicServiceImpl</code>, <code>VisitController</code>, and <code>createOrUpdateVisitForm.jsp</code>. Seven files for one domain field — the widest change fan-out in the system.</li>
+</ul>
+
+<hr>
+<p style="color:#555;font-size:0.8rem;text-align:center;margin-top:2rem;">
+  analysis/src/TOPOLOGY.html &nbsp;·&nbsp; Re-generate topology data: <code>python3 analysis/src/extract_topology.py</code>
+  &nbsp;·&nbsp; Diagram sources: <code>call-graph.mmd</code> &nbsp;·&nbsp; <code>data-lineage.mmd</code> &nbsp;·&nbsp; <code>critical-path.mmd</code>
+</p>
+
+</body>
+</html>

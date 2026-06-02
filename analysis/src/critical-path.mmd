@@ -1,0 +1,70 @@
+flowchart TD
+    %% Critical path: "Register a new owner and add a pet with a vet visit"
+    %% This traces the primary happy-path write flow end-to-end.
+
+    classDef entry   fill:#cc785c,stroke:#cc785c,color:#1e1e1e,font-weight:bold
+    classDef ctrl    fill:#2d4a6e,stroke:#4a7fb5,color:#d4d4d4
+    classDef svc     fill:#2d5a3d,stroke:#4caf70,color:#d4d4d4
+    classDef repo    fill:#3d2d5a,stroke:#8a6fb5,color:#d4d4d4
+    classDef store   fill:#1e3a1e,stroke:#4caf70,color:#d4d4d4
+    classDef view    fill:#3a3a1e,stroke:#ccaa44,color:#d4d4d4
+    classDef gate    fill:#3a2d1e,stroke:#cc9944,color:#d4d4d4,stroke-dasharray:4 2
+
+    START(["Browser:\nPOST /owners/new"]):::entry
+
+    %% ── Step 1: Create Owner ──────────────────────────────────────────
+    OC["OwnerController\nprocessCreationForm()"]:::ctrl
+    VAL1{"Bean Validation\n@Valid Owner"}:::gate
+    SAVE_O["ClinicServiceImpl\nsaveOwner(owner)\n@Transactional"]:::svc
+    REPO_O["OwnerRepository impl\n(jpa: JpaOwnerRepositoryImpl\njdbc: JdbcOwnerRepositoryImpl)"]:::repo
+    DB_owners[("DB: owners\nINSERT")]:::store
+    REDIRECT_O(["redirect: /owners/{id}"]):::entry
+
+    %% ── Step 2: View owner ────────────────────────────────────────────
+    OC2["OwnerController\nshowOwner()"]:::ctrl
+    LOAD_O["ClinicServiceImpl\nfindOwnerById()\n@Transactional readOnly\nloads pets + visits eagerly ⚠"]:::svc
+    DB_owners_R[("DB: owners, pets, visits\nSELECT (eager full-graph)")]:::store
+    V_detail["ownerDetails.jsp\n(renders owner + pet list)"]:::view
+
+    %% ── Step 3: Add Pet ──────────────────────────────────────────────
+    POST_PET(["Browser:\nPOST /owners/{ownerId}/pets/new"]):::entry
+    PC["PetController\nprocessCreationForm()"]:::ctrl
+    LOAD_TYPES["ClinicServiceImpl\nfindPetTypes()  @Cacheable? No\n(no cache on findPetTypes)"]:::svc
+    DB_types[("DB: types\nSELECT")]:::store
+    PV["PetValidator\nduplicate name check\nagainst owner.getPets()"]:::gate
+    SAVE_P["ClinicServiceImpl\nsavePet(pet)\n@Transactional"]:::svc
+    REPO_P["PetRepository impl"]:::repo
+    DB_pets[("DB: pets\nINSERT")]:::store
+    REDIRECT_PET(["redirect: /owners/{ownerId}"]):::entry
+
+    %% ── Step 4: Schedule Visit ───────────────────────────────────────
+    POST_VIS(["Browser:\nPOST /owners/*/pets/{petId}/visits/new"]):::entry
+    VC["VisitController\nprocessNewVisitForm()"]:::ctrl
+    LOAD_PET["ClinicServiceImpl\nfindPetById()\n⚠ JDBC: loads full owner graph\nto find one pet"]:::svc
+    DB_pets_r[("DB: pets (+ owner + visits)\nSELECT — over-fetch ⚠")]:::store
+    SAVE_V["ClinicServiceImpl\nsaveVisit(visit)\n@Transactional"]:::svc
+    REPO_V["VisitRepository impl"]:::repo
+    DB_visits[("DB: visits\nINSERT")]:::store
+    REDIRECT_VIS(["redirect: /owners/{ownerId}"]):::entry
+
+    %% ── No telemetry note ─────────────────────────────────────────────
+    NOTE["⚠ No production telemetry available.\nLatency figures not annotated.\nRecommend: Micrometer + Prometheus."]
+
+    %% ── Flow ─────────────────────────────────────────────────────────
+    START --> OC --> VAL1
+    VAL1 -->|"valid"| SAVE_O --> REPO_O --> DB_owners --> REDIRECT_O
+    VAL1 -->|"errors"| V_owner_form["createOrUpdateOwnerForm.jsp\n(re-render with errors)"]:::view
+
+    REDIRECT_O --> OC2 --> LOAD_O --> DB_owners_R --> V_detail
+
+    V_detail --> POST_PET --> PC
+    PC --> LOAD_TYPES --> DB_types
+    PC --> PV
+    PV -->|"valid"| SAVE_P --> REPO_P --> DB_pets --> REDIRECT_PET
+    PV -->|"duplicate name"| V_pet_form["createOrUpdatePetForm.jsp\n(re-render with errors)"]:::view
+
+    REDIRECT_PET --> POST_VIS --> VC --> LOAD_PET --> DB_pets_r
+    DB_pets_r --> SAVE_V --> REPO_V --> DB_visits --> REDIRECT_VIS
+
+    NOTE -.-> LOAD_O
+    NOTE -.-> LOAD_PET
