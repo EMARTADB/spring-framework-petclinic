@@ -90,5 +90,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1abd11d3b001KlkHCZjoRHmLft"
+  },
+  {
+    "session_id": "ses_e542ec222ffe4ad9gKpRGjM705",
+    "stage": "archive",
+    "session_title": "Archive change (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T13:06:19.234Z",
+    "end_timestamp": "2026-11-05T13:06:23.632Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "No delta specs present; sync skipped.",
+    "message_id": "msg_1abd1459e001yvSAG7z133JnCf"
   }
 ]
