@@ -334,3 +334,115 @@ STEP_STATUS: success
 _(Step finished: tool-calls)_
 
 ---
+
+### 7. Assistant — 2026-11-05T12:17:40.040Z
+
+_(Step started)_
+
+#### Tool: bash
+
+```json
+{
+  "command": "cat > ./openspec/changes/init-ainative-context/process_payload.json <<EOF\n{\"stage\":\"init\",\"step_status\":\"success\",\"step_condition\":\"\",\"step_reason\":\"\",\"questions\":{\"version_control_platform\":\"GitHub\",\"base_branch\":\"main\"},\"process_output\":\"pr-publisher and archivist contexts generated successfully; no pending agents.\"}\nEOF\nopenspec instructions finish-report --change \"init-ainative-context\" --schema \"context-generator\""
+}
+```
+
+```
+- Generating instructions...
+<artifact id="finish-report" change="init-ainative-context" schema="context-generator">
+
+<task>
+Create the finish-report artifact for change "init-ainative-context".
+Detailed technical requirements for the change
+</task>
+
+<dependencies>
+Read the current contents of these files before creating this artifact (re-read them from disk even if you saw them earlier - they may have been edited):
+
+<dependency id="setup-process" status="done">
+  <path>/home/mduenasb/work-framework/spring-framework-petclinic/.ai-native-config/openspec/changes/init-ainative-context/setup-report.md</path>
+  <description>Brief report about the setup of the process</description>
+</dependency>
+</dependencies>
+
+<output>
+Write to: /home/mduenasb/work-framework/spring-framework-petclinic/.ai-native-config/openspec/changes/init-ainative-context/finish-report.md
+</output>
+
+<instruction>
+Create a final report of the process and list of agents which the project context have been generated.
+</instruction>
+
+<template>
+<!-- Use this as the structure for your output file. Fill in the sections. -->
+## Finish Report AINative-Framework Project Context
+
+**Change name:** <!-- change name -->
+**Creation date:** <!-- local date and time -->
+
+### Process setup
+
+#### User´s answer to questions
+
+- **<!-- Question N -->**: <!-- Answer N -->
+
+### Process finish
+
+#### Agent´s project context successfully generated
+
+- **<!-- Agent N -->**
+
+#### Errors or issues detected in process (ONLY IF THIS SECTION IS NOT EMPTY)
+</template>
+
+<success_criteria>
+<!-- To be defined in schema validation rules -->
+</success_criteria>
+
+</artifact>
+
+```
+
+_(Step finished: tool-calls)_
+
+---
+
+### 8. Assistant — 2026-11-05T12:17:43.743Z
+
+_(Step started)_
+
+#### Tool: bash
+
+```json
+{
+  "command": "cat > ./openspec/changes/init-ainative-context/finish-report.md <<EOF\n## Finish Report AINative-Framework Project Context\n\n**Change name:** init-ainative-context\n**Creation date:** $(date '+%Y-%m-%d %H:%M')\n\n### Process setup\n\n#### User´s answer to questions\n\n- **Which version control platform does your application use?**: GitHub\n- **Which base branch should pull/merge requests target?**: main\n\n### Process finish\n\n#### Agent´s project context successfully generated\n\n- **pr-publisher**\n- **archivist**\nEOF"
+}
+```
+
+```
+(no output)
+```
+
+_(Step finished: tool-calls)_
+
+---
+
+### 9. Assistant — 2026-11-05T12:17:46.659Z
+
+_(Step started)_
+
+Project context was generated for both agents (pr-publisher and archivist), and the setup and finish reports are written.
+
+You chose GitHub with `main` as the base branch. The pr-publisher context also assumes the repo `EMARTADB/spring-framework-petclinic` and the `gh` CLI. A live `gh pr list` ran cleanly, so authentication works.
+
+- **Payload keys:** the payload keys are `version_control_platform` and `base_branch`, so the sub-agents read those instead of the `Q1_…`/`Q2_…` names in the setup instructions.
+- **PR create command:** pr-publisher's command uses `--body-file {body_file}` instead of `--body "{body}"`, because multiline markdown is better passed as a file.
+- **Archivist spec path:** the archivist context points to `openspec/specs/<capability>/spec.md`, not the template's `openspec/schemas/evolutive/specs/`, because the instructions forbid naming a specific schema.
+
+Nothing was staged or committed.
+
+STEP_STATUS: success
+
+_(Step finished: stop)_
+
+---

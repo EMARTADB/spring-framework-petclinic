@@ -166,5 +166,61 @@
     "tool_call_count": 5,
     "message_count": 6,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e545c0536ffe4h4dn6yaHMKKPp",
+      "parent_id": null
+    },
+    "message_id": "msg_1aba4cca3001BU0jXm80QkNXqk",
+    "stage": "init",
+    "session_title": "Renaming init-ainative-context",
+    "agent_name": "orchestrators/context-init-ainative",
+    "init_timestamp": "2026-11-05T12:16:52.946Z",
+    "end_timestamp": "2026-11-05T12:17:50.863Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 18,
+      "output": 2051,
+      "reasoning": 0,
+      "cache": {
+        "read": 834877,
+        "write": 121869
+      }
+    },
+    "cost": 0.4087062,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 18,
+        "output": 2051,
+        "reasoning": 0,
+        "cache": {
+          "read": 834877,
+          "write": 121869
+        }
+      },
+      "cost": 0.4087062
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 58,
+        "output": 7204,
+        "reasoning": 152,
+        "cache": {
+          "read": 2582042,
+          "write": 499185
+        }
+      },
+      "cost": 1.5798427
+    },
+    "tool_call_count": 8,
+    "message_count": 9,
+    "interactive": true
   }
 ]
