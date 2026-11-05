@@ -1,0 +1,23 @@
+[
+  {
+    "workflow": "config/workflows/discovery/workflow.yaml",
+    "global_parameters": {
+      "change_name": "discovery-terra1",
+      "description": "Legacy system discovery: assessment document, topology map, business rules and review of the discovery documents."
+    }
+  },
+  {
+    "session_id": "ses_e53a8efd5ffedtQqWVa5rLeL5o",
+    "stage": "start-wf",
+    "session_title": "Lanza discovery",
+    "agent_name": "orchestrators/discovery",
+    "init_timestamp": "2026-11-05T15:32:29.369Z",
+    "end_timestamp": "2026-11-05T15:32:43.084Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac572f51001N3N0xw9X6LiFHh"
+  }
+]

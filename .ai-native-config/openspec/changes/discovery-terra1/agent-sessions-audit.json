@@ -1,0 +1,170 @@
+[
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53ab14d4ffeXu2ekugOHfuq4o",
+      "parent_id": "ses_e53b01f5dffeS9sPv39z8dSacI"
+    },
+    "message_id": "msg_1ac55204e001ZMv1l8cNTbKUob",
+    "stage": null,
+    "session_title": "Create pipeline metadata (@general subagent)",
+    "agent_name": "general",
+    "init_timestamp": "2026-11-05T15:30:08.827Z",
+    "end_timestamp": "2026-11-05T15:30:26.949Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 48889,
+      "output": 227,
+      "reasoning": 53,
+      "cache": {
+        "read": 91136,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 48889,
+        "output": 227,
+        "reasoning": 53,
+        "cache": {
+          "read": 91136,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 48889,
+        "output": 227,
+        "reasoning": 53,
+        "cache": {
+          "read": 91136,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 2,
+    "message_count": 4,
+    "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53b01f5dffeS9sPv39z8dSacI",
+      "parent_id": null
+    },
+    "message_id": "msg_1ac5557f70014ABnx378XTbgR0",
+    "stage": null,
+    "session_title": "New session - 2026-11-05T15:24:38.434Z",
+    "agent_name": "system/local-orchestrator",
+    "init_timestamp": "2026-11-05T15:27:46.158Z",
+    "end_timestamp": "2026-11-05T15:30:43.088Z",
+    "iteration_count": 3,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 72025,
+      "output": 1457,
+      "reasoning": 508,
+      "cache": {
+        "read": 890368,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 72025,
+        "output": 1457,
+        "reasoning": 508,
+        "cache": {
+          "read": 890368,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 120914,
+        "output": 1684,
+        "reasoning": 561,
+        "cache": {
+          "read": 981504,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 16,
+    "message_count": 17,
+    "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53a8efd5ffedtQqWVa5rLeL5o",
+      "parent_id": null
+    },
+    "message_id": "msg_1ac572f51001N3N0xw9X6LiFHh",
+    "stage": "start-wf",
+    "session_title": "Lanza discovery",
+    "agent_name": "orchestrators/discovery",
+    "init_timestamp": "2026-11-05T15:32:29.369Z",
+    "end_timestamp": "2026-11-05T15:32:43.084Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 46108,
+      "output": 70,
+      "reasoning": 62,
+      "cache": {
+        "read": 43520,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 46108,
+        "output": 70,
+        "reasoning": 62,
+        "cache": {
+          "read": 43520,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 167022,
+        "output": 1754,
+        "reasoning": 623,
+        "cache": {
+          "read": 1025024,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 1,
+    "message_count": 3,
+    "interactive": false
+  }
+]
