@@ -1,0 +1,60 @@
+graph TD
+  subgraph Runtime
+    Browser[Browser]
+    Container[Jetty or Servlet container]
+    Init[PetclinicInitializer]
+    DS[DispatcherServlet]
+  end
+
+  subgraph Presentation[Presentation / Spring MVC]
+    MVC[mvc-core-config.xml]
+    OwnerWeb[OwnerController]
+    PetWeb[PetController + formatter/validator]
+    VisitWeb[VisitController]
+    VetWeb[VetController]
+    JSP[JSPs, tags, messages, static resources]
+  end
+
+  subgraph Business[Business layer]
+    Service[ClinicServiceImpl]
+    Tools[Cache + call-monitor/JMX]
+  end
+
+  subgraph Persistence[Profile-selected persistence layer]
+    Ports[Repository interfaces]
+    JPA[JPA implementations]
+    JDBC[JDBC implementations]
+    SDJPA[Spring Data JPA proxies]
+    DSConfig[Datasource/configuration]
+  end
+
+  subgraph Data[Relational data]
+    Schema[Vendor schema + seed scripts]
+    DB[(H2 / HSQLDB / MySQL / PostgreSQL)]
+  end
+
+  Browser --> Container --> Init
+  Init --> DS
+  Init --> MVC
+  DS --> OwnerWeb
+  DS --> PetWeb
+  DS --> VisitWeb
+  DS --> VetWeb
+  OwnerWeb --> Service
+  PetWeb --> Service
+  VisitWeb --> Service
+  VetWeb --> Service
+  OwnerWeb --> JSP
+  PetWeb --> JSP
+  VisitWeb --> JSP
+  VetWeb --> JSP
+  Service --> Ports
+  Service --> Tools
+  Ports --> JPA
+  Ports --> JDBC
+  Ports --> SDJPA
+  DSConfig --> Schema
+  DSConfig --> DB
+  JPA --> DB
+  JDBC --> DB
+  SDJPA --> DB

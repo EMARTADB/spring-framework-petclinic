@@ -334,5 +334,61 @@
     "tool_call_count": 63,
     "message_count": 16,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53a4a81bffeACTozoy8XRrqLC",
+      "parent_id": "ses_e53b01f5dffeS9sPv39z8dSacI"
+    },
+    "message_id": "msg_1ac638086001v9227QdlnlUdq7",
+    "stage": "discovery-assessment",
+    "session_title": "Run discovery assessment (@discovery/init-assess subagent)",
+    "agent_name": "discovery/init-assess",
+    "init_timestamp": "2026-11-05T15:37:09.871Z",
+    "end_timestamp": "2026-11-05T15:46:12.329Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 90841,
+      "output": 6173,
+      "reasoning": 722,
+      "cache": {
+        "read": 737792,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 90841,
+        "output": 6173,
+        "reasoning": 722,
+        "cache": {
+          "read": 737792,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 579263,
+        "output": 25262,
+        "reasoning": 8485,
+        "cache": {
+          "read": 4489728,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 26,
+    "message_count": 13,
+    "interactive": false
   }
 ]

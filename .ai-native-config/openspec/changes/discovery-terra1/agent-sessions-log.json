@@ -19,5 +19,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac572f51001N3N0xw9X6LiFHh"
+  },
+  {
+    "session_id": "ses_e53a4a81bffeACTozoy8XRrqLC",
+    "stage": "discovery-assessment",
+    "session_title": "Run discovery assessment (@discovery/init-assess subagent)",
+    "agent_name": "discovery/init-assess",
+    "init_timestamp": "2026-11-05T15:37:09.871Z",
+    "end_timestamp": "2026-11-05T15:46:12.329Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac638086001v9227QdlnlUdq7"
   }
 ]
