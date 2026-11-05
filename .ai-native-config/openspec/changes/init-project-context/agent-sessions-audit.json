@@ -278,5 +278,61 @@
     "tool_call_count": 1,
     "message_count": 3,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e543004c9ffebAN71OmWc6mFT7",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abd0b76f001xyK4y8W9qGGVAh",
+    "stage": "graph",
+    "session_title": "Build knowledge graph (@init/graph subagent)",
+    "agent_name": "init/graph",
+    "init_timestamp": "2026-11-05T13:04:56.639Z",
+    "end_timestamp": "2026-11-05T13:05:51.549Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 24,
+      "output": 5866,
+      "reasoning": 275,
+      "cache": {
+        "read": 1374210,
+        "write": 146414
+      }
+    },
+    "cost": 0.564914,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 24,
+        "output": 5866,
+        "reasoning": 275,
+        "cache": {
+          "read": 1374210,
+          "write": 146414
+        }
+      },
+      "cost": 0.564914
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 96,
+        "output": 19777,
+        "reasoning": 626,
+        "cache": {
+          "read": 4913543,
+          "write": 700345
+        }
+      },
+      "cost": 2.4464388
+    },
+    "tool_call_count": 10,
+    "message_count": 12,
+    "interactive": false
   }
 ]
