@@ -390,5 +390,61 @@
     "tool_call_count": 4,
     "message_count": 6,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53e7e5aeffeZwHB89ZlMpGdIs",
+      "parent_id": "ses_e53ec7d05ffeudPuiQa0y4C12Z"
+    },
+    "message_id": "msg_1ac1832b5001sJhOpRId1DzNLE",
+    "stage": "archive",
+    "session_title": "Archive change (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T14:23:43.190Z",
+    "end_timestamp": "2026-11-05T14:23:52.108Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "No delta specs exist for init-david1, so no sync was needed.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 10,
+      "output": 409,
+      "reasoning": 0,
+      "cache": {
+        "read": 349523,
+        "write": 117189
+      }
+    },
+    "cost": 0.3320348,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 10,
+        "output": 409,
+        "reasoning": 0,
+        "cache": {
+          "read": 349523,
+          "write": 117189
+        }
+      },
+      "cost": 0.3320348
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 108,
+        "output": 14446,
+        "reasoning": 305,
+        "cache": {
+          "read": 4941828,
+          "write": 903845
+        }
+      },
+      "cost": 2.9015213
+    },
+    "tool_call_count": 3,
+    "message_count": 5,
+    "interactive": false
   }
 ]
