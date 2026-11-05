@@ -16,3 +16,11 @@ target/
 
 # OS
 .DS_Store
+_bmad
+.envrc
+.ai-native-config/tmp/
+.ai-native-config/common/tmp/
+.ai-native-config/common/multirepo.yaml
+.ai-native-config/openspec/schemas
+.ai-native-config/openspec/config.yaml
+.ai-native-config/common/.debug
