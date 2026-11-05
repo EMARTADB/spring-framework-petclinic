@@ -390,5 +390,61 @@
     "tool_call_count": 26,
     "message_count": 13,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e539bda6affeUNheHy6mHedosR",
+      "parent_id": "ses_e53b01f5dffeS9sPv39z8dSacI"
+    },
+    "message_id": "msg_1ac67f6ff001x3dm5qIPvLkf53",
+    "stage": "discovery-map",
+    "session_title": "Build discovery topology (@discovery/init-map subagent)",
+    "agent_name": "discovery/init-map",
+    "init_timestamp": "2026-11-05T15:46:46.811Z",
+    "end_timestamp": "2026-11-05T15:51:03.882Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 124090,
+      "output": 6348,
+      "reasoning": 995,
+      "cache": {
+        "read": 1535488,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 124090,
+        "output": 6348,
+        "reasoning": 995,
+        "cache": {
+          "read": 1535488,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 703353,
+        "output": 31610,
+        "reasoning": 9480,
+        "cache": {
+          "read": 6025216,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 57,
+    "message_count": 19,
+    "interactive": false
   }
 ]

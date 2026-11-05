@@ -1,0 +1,57 @@
+flowchart TB
+    subgraph Runtime[Servlet container and Spring bootstrap]
+        INIT[PetclinicInitializer]
+        ROOT[Root context\nbusiness-config + tools-config]
+        WEB[MVC context\nmvc-core-config]
+        DISP[DispatcherServlet /]
+        INIT --> ROOT
+        INIT --> WEB
+        DISP --> WEB
+    end
+
+    subgraph Web[Presentation]
+        STATIC[Welcome + static resources]
+        OWN[OwnerController]
+        PET[PetController]
+        VISIT[VisitController]
+        VET[VetController]
+        CRASH[CrashController]
+        JSP[JSP views and tags]
+        WEB --> STATIC
+        WEB --> OWN & PET & VISIT & VET & CRASH
+        OWN & PET & VISIT & VET --> JSP
+        CRASH --> ERR[exception.jsp]
+    end
+
+    subgraph Business[Business and cross-cutting]
+        SERVICE[ClinicServiceImpl\ntransactions; vets cache]
+        JMX[CallMonitoringAspect / JMX]
+        SERVICE -. monitored .-> JMX
+    end
+
+    OWN & PET & VISIT & VET --> SERVICE
+
+    subgraph Ports[Repository ports]
+        OR[OwnerRepository]
+        PR[PetRepository]
+        VIR[VisitRepository]
+        VER[VetRepository]
+    end
+    SERVICE --> OR & PR & VIR & VER
+
+    subgraph Profile[One active persistence family]
+        JPA[profile: jpa\nhandwritten JPA]
+        JDBC[profile: jdbc\nJdbcClient repositories]
+        SD[profile: spring-data-jpa\nSpring Data repositories]
+    end
+    OR & PR & VIR & VER --> JPA
+    OR & PR & VIR & VER --> JDBC
+    OR & PR & VIR & VER --> SD
+
+    subgraph Store[Datasource and data]
+        DS[Tomcat JDBC pool or JNDI datasource]
+        SQL[profile-selected schema.sql + data.sql]
+        DB[(H2 default; HSQLDB; MySQL; PostgreSQL)]
+        DS --> SQL --> DB
+    end
+    JPA & JDBC & SD --> DS

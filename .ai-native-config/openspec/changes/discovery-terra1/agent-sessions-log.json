@@ -33,5 +33,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac638086001v9227QdlnlUdq7"
+  },
+  {
+    "session_id": "ses_e539bda6affeUNheHy6mHedosR",
+    "stage": "discovery-map",
+    "session_title": "Build discovery topology (@discovery/init-map subagent)",
+    "agent_name": "discovery/init-map",
+    "init_timestamp": "2026-11-05T15:46:46.811Z",
+    "end_timestamp": "2026-11-05T15:51:03.882Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac67f6ff001x3dm5qIPvLkf53"
   }
 ]
