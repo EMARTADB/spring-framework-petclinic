@@ -222,5 +222,61 @@
     "tool_call_count": 7,
     "message_count": 7,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53c47936ffeA9RxwFmEUZeOGV",
+      "parent_id": "ses_e53cdb885ffeyeuXIXSe1Vngt2"
+    },
+    "message_id": "msg_1ac3bb863001H3WPH9oI1iTXUz",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T15:02:24.718Z",
+    "end_timestamp": "2026-11-05T15:02:43.202Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "The ./ai-docs symlink pointed to a missing directory, so I created it before copying.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 12,
+      "output": 1252,
+      "reasoning": 265,
+      "cache": {
+        "read": 466350,
+        "write": 118854
+      }
+    },
+    "cost": 0.358964,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 12,
+        "output": 1252,
+        "reasoning": 265,
+        "cache": {
+          "read": 466350,
+          "write": 118854
+        }
+      },
+      "cost": 0.358964
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 74,
+        "output": 13378,
+        "reasoning": 359,
+        "cache": {
+          "read": 3718535,
+          "write": 417443
+        }
+      },
+      "cost": 1.5529789999999999
+    },
+    "tool_call_count": 4,
+    "message_count": 6,
+    "interactive": false
   }
 ]
