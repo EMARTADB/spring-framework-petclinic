@@ -1,0 +1,24 @@
+[
+  {
+    "workflow": "config/workflows/init/workflow.yaml",
+    "global_parameters": {
+      "change_name": "init-david1",
+      "scan_depth_level": "quick",
+      "description": "Initializes the project context: context documents, detailed context documents, review and knowledge graph."
+    }
+  },
+  {
+    "session_id": "ses_e53eaf665ffeb7h1b843iQhV5q",
+    "stage": "start-wf",
+    "session_title": "Quick scan with name change to init-david1",
+    "agent_name": "orchestrators/init",
+    "init_timestamp": "2026-11-05T14:20:22.320Z",
+    "end_timestamp": "2026-11-05T14:20:38.936Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": "auto",
+    "reason": null,
+    "message_id": "msg_1ac1543a20019mJNvpu7x61GqO"
+  }
+]
