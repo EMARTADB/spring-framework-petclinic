@@ -33,5 +33,19 @@
     "condition": "unexpected",
     "reason": "Branch openspec/changes/init-ainative-context has no commits relative to main and is not pushed, so no PR could be created.",
     "message_id": "msg_1aba6eaea001KAvTV121zz0TTQ"
+  },
+  {
+    "session_id": "ses_e544f244bffeijGhaahQNnRitb",
+    "stage": "pr-publish",
+    "session_title": "Reintentar PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T12:30:56.961Z",
+    "end_timestamp": "2026-11-05T12:31:16.198Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "unexpected",
+    "reason": "Branch openspec/changes/init-ainative-context exists only locally and is not pushed to origin, so the PR could not be created.",
+    "message_id": "msg_1abb119cd001dgbFUYgJnuvBBR"
   }
 ]
