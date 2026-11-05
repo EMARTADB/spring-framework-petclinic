@@ -222,5 +222,61 @@
     "tool_call_count": 9,
     "message_count": 10,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53d53e05ffeLKWW6vSzLJfIBM",
+      "parent_id": "ses_e53da22b3ffecoB5eTMhNzIriY"
+    },
+    "message_id": "msg_1ac2af033001UwSB2P8HoNJPCC",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T14:44:05.760Z",
+    "end_timestamp": "2026-11-05T14:44:23.306Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "unexpected",
+    "reason": "Artifacts are valid, but ./ai-docs is a dangling symlink whose target directory could not be created (permission denied), so the copy failed.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 12,
+      "output": 1085,
+      "reasoning": 128,
+      "cache": {
+        "read": 466306,
+        "write": 118593
+      }
+    },
+    "cost": 0.35526709999999995,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 12,
+        "output": 1085,
+        "reasoning": 128,
+        "cache": {
+          "read": 466306,
+          "write": 118593
+        }
+      },
+      "cost": 0.35526709999999995
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 76,
+        "output": 14364,
+        "reasoning": 644,
+        "cache": {
+          "read": 3776469,
+          "write": 550324
+        }
+      },
+      "cost": 1.9036889000000001
+    },
+    "tool_call_count": 4,
+    "message_count": 6,
+    "interactive": false
   }
 ]

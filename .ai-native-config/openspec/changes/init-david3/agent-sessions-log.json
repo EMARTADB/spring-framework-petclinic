@@ -48,5 +48,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac2a92ea001RBoB5p4gY1dARu"
+  },
+  {
+    "session_id": "ses_e53d53e05ffeLKWW6vSzLJfIBM",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T14:44:05.760Z",
+    "end_timestamp": "2026-11-05T14:44:23.306Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "unexpected",
+    "reason": "Artifacts are valid, but ./ai-docs is a dangling symlink whose target directory could not be created (permission denied), so the copy failed.",
+    "message_id": "msg_1ac2af033001UwSB2P8HoNJPCC"
   }
 ]
