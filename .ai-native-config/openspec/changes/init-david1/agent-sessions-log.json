@@ -48,5 +48,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac169f88001H26gSfv0zaHV47"
+  },
+  {
+    "session_id": "ses_e53e9367affedOXRc6xqPm4r6A",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T14:22:16.970Z",
+    "end_timestamp": "2026-11-05T14:22:27.167Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac16e074001yxgLZ5XhWWo5aQ"
   }
 ]

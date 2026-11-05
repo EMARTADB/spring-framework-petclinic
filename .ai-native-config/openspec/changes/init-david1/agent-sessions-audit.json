@@ -222,5 +222,61 @@
     "tool_call_count": 6,
     "message_count": 7,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53e9367affedOXRc6xqPm4r6A",
+      "parent_id": "ses_e53ec7d05ffeudPuiQa0y4C12Z"
+    },
+    "message_id": "msg_1ac16e074001yxgLZ5XhWWo5aQ",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T14:22:16.970Z",
+    "end_timestamp": "2026-11-05T14:22:27.167Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 8,
+      "output": 798,
+      "reasoning": 66,
+      "cache": {
+        "read": 230735,
+        "write": 117201
+      }
+    },
+    "cost": 0.32473199999999997,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 8,
+        "output": 798,
+        "reasoning": 66,
+        "cache": {
+          "read": 230735,
+          "write": 117201
+        }
+      },
+      "cost": 0.32473199999999997
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 66,
+        "output": 9451,
+        "reasoning": 169,
+        "cache": {
+          "read": 3032440,
+          "write": 524396
+        }
+      },
+      "cost": 1.7105660000000003
+    },
+    "tool_call_count": 2,
+    "message_count": 4,
+    "interactive": false
   }
 ]
