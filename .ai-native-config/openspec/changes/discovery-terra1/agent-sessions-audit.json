@@ -166,5 +166,61 @@
     "tool_call_count": 1,
     "message_count": 3,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53a40131ffepxdde0uc1FLOv2",
+      "parent_id": "ses_e53a4a81bffeACTozoy8XRrqLC"
+    },
+    "message_id": "msg_1ac5ec8c1001Sj7YWLbPy0VPnb",
+    "stage": null,
+    "session_title": "Map Petclinic architecture (@discovery/legacy-analyst subagent)",
+    "agent_name": "discovery/legacy-analyst",
+    "init_timestamp": "2026-11-05T15:37:52.594Z",
+    "end_timestamp": "2026-11-05T15:42:06.819Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 110363,
+      "output": 6731,
+      "reasoning": 1079,
+      "cache": {
+        "read": 949248,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 110363,
+        "output": 6731,
+        "reasoning": 1079,
+        "cache": {
+          "read": 949248,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 277385,
+        "output": 8485,
+        "reasoning": 1702,
+        "cache": {
+          "read": 1974272,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 71,
+    "message_count": 16,
+    "interactive": false
   }
 ]
