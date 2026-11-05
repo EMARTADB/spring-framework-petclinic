@@ -278,5 +278,61 @@
     "tool_call_count": 4,
     "message_count": 6,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53c41393ffeqZiFG2JWuzA8iP",
+      "parent_id": "ses_e53cdb885ffeyeuXIXSe1Vngt2"
+    },
+    "message_id": "msg_1ac3c7093001C0KClt8GGvglJm",
+    "stage": "graph",
+    "session_title": "Graph stage (@init/graph subagent)",
+    "agent_name": "init/graph",
+    "init_timestamp": "2026-11-05T15:02:50.736Z",
+    "end_timestamp": "2026-11-05T15:03:30.064Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 20,
+      "output": 3424,
+      "reasoning": 282,
+      "cache": {
+        "read": 1093630,
+        "write": 144678
+      }
+    },
+    "cost": 0.508158,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 20,
+        "output": 3424,
+        "reasoning": 282,
+        "cache": {
+          "read": 1093630,
+          "write": 144678
+        }
+      },
+      "cost": 0.508158
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 94,
+        "output": 16802,
+        "reasoning": 641,
+        "cache": {
+          "read": 4812165,
+          "write": 562121
+        }
+      },
+      "cost": 2.061137
+    },
+    "tool_call_count": 9,
+    "message_count": 10,
+    "interactive": false
   }
 ]

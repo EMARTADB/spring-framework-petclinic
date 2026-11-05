@@ -851,3 +851,81 @@ STEP_REASON: The `./ai-docs` symlink pointed to a missing directory, so I create
 _(Step finished: tool-calls)_
 
 ---
+
+### 21. Assistant — 2026-11-05T15:02:45.359Z
+
+_(Step started)_
+
+#### Tool: bash
+
+```json
+{
+  "command": "cat /home/mduenasb/work-framework/ainative-framework/config/agents/init/graph/input-prompt.md; export AINATIVE_STAGE_ID=graph"
+}
+```
+
+```
+Execute the project context init workflow for the following change.
+
+**Change name** (<name>): {param:"change_name"}
+
+Using the skill "graphify", update the graph, indexing the repositories under the workspace.
+
+If the graph already exists, make sure you re-extract only changed files. Overwrite the existing graph even if the rebuild has fewer nodes (as if using --force).
+
+The repositories in the workspace are symlinks to the actual repos. Make sure you honor all the ignore rules defined in `.graphifyignore` files across the repositories.
+
+The workspace already exposes the main repository's graph output at `graphify-out/`; use that path directly.
+ - After the graph is finished, copy the generated file "GRAPH_REPORT.md" to the change directory `./openspec/changes/{param:"change_name"}/`, with this relative path: "init/graph/".
+ - Review and clean-up any temporary files or directories you created.
+
+```
+
+_(Step finished: tool-calls)_
+
+---
+
+### 22. Assistant — 2026-11-05T15:02:47.455Z
+
+_(Step started)_
+
+#### Tool: task
+
+```json
+{
+  "description": "Graph stage",
+  "prompt": "Execute the project context init workflow for the following change.\n\n**Change name** (<name>): {param:\"change_name\"}\n\nUsing the skill \"graphify\", update the graph, indexing the repositories under the workspace.\n\nIf the graph already exists, make sure you re-extract only changed files. Overwrite the existing graph even if the rebuild has fewer nodes (as if using --force).\n\nThe repositories in the workspace are symlinks to the actual repos. Make sure you honor all the ignore rules defined in `.graphifyignore` files across the repositories.\n\nThe workspace already exposes the main repository's graph output at `graphify-out/`; use that path directly.\n - After the graph is finished, copy the generated file \"GRAPH_REPORT.md\" to the change directory `./openspec/changes/{param:\"change_name\"}/`, with this relative path: \"init/graph/\".\n - Review and clean-up any temporary files or directories you created.",
+  "subagent_type": "init/graph"
+}
+```
+
+```
+<task id="ses_e53c41393ffeqZiFG2JWuzA8iP" state="completed">
+<task_result>
+The graph is rebuilt and staged: 585 nodes, 1144 edges and 27 communities. I did not commit or push.
+
+The workspace had no existing `graph.json` or manifest, only a cache directory, so this was a full rebuild. The only `.graphifyignore` found was in `spring-framework-petclinic`, and detection honored it. That left 97 files: 71 code, 18 docs and 8 images.
+
+- **Code:** 71 files went through AST extraction, giving 578 nodes and 2810 edges.
+- **Docs and workflows:** No agents were dispatched, so I did a limited extraction myself. It covers the readme, the architecture doc and the two CI workflows, and adds 7 concept and doc nodes with 7 edges (5 of them marked inferred).
+- **Not covered semantically:** The other docs, the SQL setup `.txt` files, the SVG fonts and the 6 PNG images were not extracted.
+
+Artifacts:
+- `graphify-out/graph.json`: graph data, staged.
+- `graphify-out/graph.html`: interactive graph, staged.
+- `graphify-out/GRAPH_REPORT.md`: audit report, staged.
+- `graphify-out/manifest.json`: file manifest for later incremental updates, staged.
+- `./openspec/changes/init-david4/init/graph/GRAPH_REPORT.md`: copy of the report for this change.
+
+The `.graphify_*` temp files are removed. The `cache/` directory under `graphify-out` is left unstaged.
+
+All expected artifacts created!
+
+STEP_STATUS: success
+</task_result>
+</task>
+```
+
+_(Step finished: tool-calls)_
+
+---
