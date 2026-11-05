@@ -61,5 +61,19 @@
     "condition": "unexpected",
     "reason": "Branch openspec/changes/init-ainative-context is not pushed to the remote, so GitHub reports no commits between it and main and the PR cannot be created.",
     "message_id": "msg_1abb46e0f001XC3eddcboiDRv0"
+  },
+  {
+    "session_id": "ses_e544636a2ffeGRcqZDtHEFwpBz",
+    "stage": "pr-publish",
+    "session_title": "Reintentar PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T12:40:42.086Z",
+    "end_timestamp": "2026-11-05T12:40:59.387Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1abba03ba001LVQEXkvbSwPnZp"
   }
 ]

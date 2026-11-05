@@ -390,5 +390,117 @@
     "tool_call_count": 4,
     "message_count": 6,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e545d03f1ffeHeFr66azm0R5OP",
+      "parent_id": null
+    },
+    "message_id": "msg_1abb483bd001k0sqlgryPKsPP8",
+    "stage": null,
+    "session_title": "Ejecución de workflow context-init-ainative",
+    "agent_name": "system/local-orchestrator",
+    "init_timestamp": "2026-11-05T12:19:46.589Z",
+    "end_timestamp": "2026-11-05T12:35:00.616Z",
+    "iteration_count": 2,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 20,
+      "output": 2171,
+      "reasoning": 117,
+      "cache": {
+        "read": 1106814,
+        "write": 142259
+      }
+    },
+    "cost": 0.48924889999999993,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 36,
+        "output": 3737,
+        "reasoning": 206,
+        "cache": {
+          "read": 1911761,
+          "write": 278694
+        }
+      },
+      "cost": 0.9274131000000001
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 118,
+        "output": 12020,
+        "reasoning": 331,
+        "cache": {
+          "read": 5431466,
+          "write": 878942
+        }
+      },
+      "cost": 2.8642475999999997
+    },
+    "tool_call_count": 10,
+    "message_count": 10,
+    "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e544636a2ffeGRcqZDtHEFwpBz",
+      "parent_id": "ses_e545d03f1ffeHeFr66azm0R5OP"
+    },
+    "message_id": "msg_1abba03ba001LVQEXkvbSwPnZp",
+    "stage": "pr-publish",
+    "session_title": "Reintentar PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T12:40:42.086Z",
+    "end_timestamp": "2026-11-05T12:40:59.387Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 14,
+      "output": 751,
+      "reasoning": 0,
+      "cache": {
+        "read": 582211,
+        "write": 117745
+      }
+    },
+    "cost": 0.3601216,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 14,
+        "output": 751,
+        "reasoning": 0,
+        "cache": {
+          "read": 582211,
+          "write": 117745
+        }
+      },
+      "cost": 0.3601216
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 132,
+        "output": 12771,
+        "reasoning": 331,
+        "cache": {
+          "read": 6013677,
+          "write": 996687
+        }
+      },
+      "cost": 3.2243691999999995
+    },
+    "tool_call_count": 5,
+    "message_count": 7,
+    "interactive": false
   }
 ]
