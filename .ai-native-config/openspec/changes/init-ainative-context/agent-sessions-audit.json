@@ -1,0 +1,114 @@
+[
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e545d03f1ffeHeFr66azm0R5OP",
+      "parent_id": null
+    },
+    "message_id": "msg_1aba36c63001h2gkDYXdTwMmls",
+    "stage": null,
+    "session_title": "Ejecución de workflow context-init-ainative",
+    "agent_name": "system/local-orchestrator",
+    "init_timestamp": "2026-11-05T12:15:47.768Z",
+    "end_timestamp": "2026-11-05T12:16:18.891Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 16,
+      "output": 1566,
+      "reasoning": 89,
+      "cache": {
+        "read": 804947,
+        "write": 136435
+      }
+    },
+    "cost": 0.43816420000000006,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 16,
+        "output": 1566,
+        "reasoning": 89,
+        "cache": {
+          "read": 804947,
+          "write": 136435
+        }
+      },
+      "cost": 0.43816420000000006
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 16,
+        "output": 1566,
+        "reasoning": 89,
+        "cache": {
+          "read": 804947,
+          "write": 136435
+        }
+      },
+      "cost": 0.43816420000000006
+    },
+    "tool_call_count": 8,
+    "message_count": 8,
+    "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e545b9a7cffeZ8tGYHWJ51RKnI",
+      "parent_id": "ses_e545c0536ffe4h4dn6yaHMKKPp"
+    },
+    "message_id": "msg_1aba49f71001xzimb115ApJ6ZL",
+    "stage": null,
+    "session_title": "archivist context (@context-generator/single-context subagent)",
+    "agent_name": "context-generator/single-context",
+    "init_timestamp": "2026-11-05T12:17:20.264Z",
+    "end_timestamp": "2026-11-05T12:17:39.184Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 12,
+      "output": 1854,
+      "reasoning": 63,
+      "cache": {
+        "read": 469978,
+        "write": 120168
+      }
+    },
+    "cost": 0.3666118,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 12,
+        "output": 1854,
+        "reasoning": 63,
+        "cache": {
+          "read": 469978,
+          "write": 120168
+        }
+      },
+      "cost": 0.3666118
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 28,
+        "output": 3420,
+        "reasoning": 152,
+        "cache": {
+          "read": 1274925,
+          "write": 256603
+        }
+      },
+      "cost": 0.804776
+    },
+    "tool_call_count": 5,
+    "message_count": 6,
+    "interactive": false
+  }
+]

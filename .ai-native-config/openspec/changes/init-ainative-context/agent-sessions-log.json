@@ -1,0 +1,9 @@
+[
+  {
+    "workflow": "config/workflows/context-init-ainative/workflow.yaml",
+    "global_parameters": {
+      "description": "Generates the initial context of the key agents (pr-publisher, archivist) required before running other workflows.",
+      "change_name": "init-ainative-context"
+    }
+  }
+]
