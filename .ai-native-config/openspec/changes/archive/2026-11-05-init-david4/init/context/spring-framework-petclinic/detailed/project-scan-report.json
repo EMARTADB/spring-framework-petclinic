@@ -1,0 +1,1 @@
+{"workflow_version":"1.2.0","mode":"initial_scan","scan_level":"quick","project_types":[{"part_id":"main","project_type_id":"web","display_name":"Spring MVC web app"}],"completed_steps":["step_1","step_2","step_3","step_4","step_5","step_6","step_8","step_9","step_10","step_11","step_12"],"current_step":"completed","note":"step_7 skipped (single part); common set not generated"}

@@ -1,0 +1,487 @@
+{
+  ".devcontainer/devcontainer.json": {
+    "mtime": 1793879240.0836532,
+    "ast_hash": "30f6c63825cd2e39ff9478575aa2db44",
+    "semantic_hash": "30f6c63825cd2e39ff9478575aa2db44"
+  },
+  "mvnw": {
+    "mtime": 1793879240.0856304,
+    "ast_hash": "56f88c64468fb81445b8318947334596",
+    "semantic_hash": "56f88c64468fb81445b8318947334596"
+  },
+  "src/main/java/org/springframework/samples/petclinic/PetclinicInitializer.java": {
+    "mtime": 1793879240.086334,
+    "ast_hash": "c8815c930dcaca27a398d08d8c136f1f",
+    "semantic_hash": "c8815c930dcaca27a398d08d8c136f1f"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java": {
+    "mtime": 1793879240.0865211,
+    "ast_hash": "b5e5402ce629924fa599846c880c926b",
+    "semantic_hash": "b5e5402ce629924fa599846c880c926b"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "d07abfdd75c7b72760cf90ada8b948d7",
+    "semantic_hash": "d07abfdd75c7b72760cf90ada8b948d7"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Owner.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "6bdea64e98566f3fc639bafeaeab100c",
+    "semantic_hash": "6bdea64e98566f3fc639bafeaeab100c"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Person.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "32ce546f03111b4a62e34942cb4075c5",
+    "semantic_hash": "32ce546f03111b4a62e34942cb4075c5"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Pet.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "050d821de896f9a5b3f76cdbcb491d2c",
+    "semantic_hash": "050d821de896f9a5b3f76cdbcb491d2c"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/PetType.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "af499ba14e223fccf2ce8bb583f8055d",
+    "semantic_hash": "af499ba14e223fccf2ce8bb583f8055d"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Specialty.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "06b756d17c64b87ed0349a2f98c3578d",
+    "semantic_hash": "06b756d17c64b87ed0349a2f98c3578d"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Vet.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "06b450e0a5c38831f01bc92e70979fc3",
+    "semantic_hash": "06b450e0a5c38831f01bc92e70979fc3"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Vets.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "c09c39f76fd4fb956b5064f6a290579a",
+    "semantic_hash": "c09c39f76fd4fb956b5064f6a290579a"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/Visit.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "198b66f358cf1b2d5a8de661e8d3487f",
+    "semantic_hash": "198b66f358cf1b2d5a8de661e8d3487f"
+  },
+  "src/main/java/org/springframework/samples/petclinic/model/package-info.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "945625b7ef79b47f586be1bd856f0932",
+    "semantic_hash": "945625b7ef79b47f586be1bd856f0932"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/OwnerRepository.java": {
+    "mtime": 1793879240.086566,
+    "ast_hash": "02982f16c66ac362e466d3102e81439e",
+    "semantic_hash": "02982f16c66ac362e466d3102e81439e"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/PetRepository.java": {
+    "mtime": 1793879240.0869708,
+    "ast_hash": "e7099f6634c202606763d15a0167d1de",
+    "semantic_hash": "e7099f6634c202606763d15a0167d1de"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/VetRepository.java": {
+    "mtime": 1793879240.0869708,
+    "ast_hash": "128315e422f2dba5df3f23ccc0a4de73",
+    "semantic_hash": "128315e422f2dba5df3f23ccc0a4de73"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/VisitRepository.java": {
+    "mtime": 1793879240.0869708,
+    "ast_hash": "ab9f579b68977ff443357c4204a09cf6",
+    "semantic_hash": "ab9f579b68977ff443357c4204a09cf6"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcOwnerRepositoryImpl.java": {
+    "mtime": 1793879240.0869708,
+    "ast_hash": "3cc8ce33f939ce37eea0154df8b05cf5",
+    "semantic_hash": "3cc8ce33f939ce37eea0154df8b05cf5"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPet.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "bd5dee6c29311af8e8e558cbf51683df",
+    "semantic_hash": "bd5dee6c29311af8e8e558cbf51683df"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPetRepositoryImpl.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "e4d3019ffc5fb68c7e1e7c4ea5bc2fda",
+    "semantic_hash": "e4d3019ffc5fb68c7e1e7c4ea5bc2fda"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPetRowMapper.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "99fb33fa102780de41cd6e1dcb210bf9",
+    "semantic_hash": "99fb33fa102780de41cd6e1dcb210bf9"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcPetVisitExtractor.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "f948672c0cb5f324948149da91ad648d",
+    "semantic_hash": "f948672c0cb5f324948149da91ad648d"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcVetRepositoryImpl.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "6a6c4cc357eb5031fe28ebb5eeef8654",
+    "semantic_hash": "6a6c4cc357eb5031fe28ebb5eeef8654"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcVisitRepositoryImpl.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "eed225886ca3368021bea792ebf91c86",
+    "semantic_hash": "eed225886ca3368021bea792ebf91c86"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/JdbcVisitRowMapper.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "82b9b8cc7d98bdae507a9f68ad306bd8",
+    "semantic_hash": "82b9b8cc7d98bdae507a9f68ad306bd8"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/OneToManyResultSetExtractor.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "9ec7bd267f55da66db04757da662ec84",
+    "semantic_hash": "9ec7bd267f55da66db04757da662ec84"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jdbc/package-info.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "527a9adfb93d4f0898cc1d3eb943f148",
+    "semantic_hash": "527a9adfb93d4f0898cc1d3eb943f148"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java": {
+    "mtime": 1793879240.0871367,
+    "ast_hash": "aef55c81726119b354fe0dcecd9f6a8b",
+    "semantic_hash": "aef55c81726119b354fe0dcecd9f6a8b"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java": {
+    "mtime": 1793879240.0874853,
+    "ast_hash": "8a96bab54c364909a22076b7560ebaab",
+    "semantic_hash": "8a96bab54c364909a22076b7560ebaab"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVetRepositoryImpl.java": {
+    "mtime": 1793879240.0874853,
+    "ast_hash": "4f0bf511af76e43a1d8e9ba4c005d3c1",
+    "semantic_hash": "4f0bf511af76e43a1d8e9ba4c005d3c1"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java": {
+    "mtime": 1793879240.0874853,
+    "ast_hash": "fedaf22635a18107e760e7a31602b0b8",
+    "semantic_hash": "fedaf22635a18107e760e7a31602b0b8"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/jpa/package-info.java": {
+    "mtime": 1793879240.0874853,
+    "ast_hash": "7e1eaa7a7afe2f354260f78e7c38cbb0",
+    "semantic_hash": "7e1eaa7a7afe2f354260f78e7c38cbb0"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataOwnerRepository.java": {
+    "mtime": 1793879240.0874853,
+    "ast_hash": "cac560045684bb5cbdd9ab94af2a8550",
+    "semantic_hash": "cac560045684bb5cbdd9ab94af2a8550"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetRepository.java": {
+    "mtime": 1793879240.0876405,
+    "ast_hash": "3e2cb2e2d2f1d8794a838023a63964f4",
+    "semantic_hash": "3e2cb2e2d2f1d8794a838023a63964f4"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVetRepository.java": {
+    "mtime": 1793879240.0876405,
+    "ast_hash": "8460045f8e27d7f6818d6e5d05d5bd9d",
+    "semantic_hash": "8460045f8e27d7f6818d6e5d05d5bd9d"
+  },
+  "src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVisitRepository.java": {
+    "mtime": 1793879240.0876405,
+    "ast_hash": "677887f5bfb328a382a57e8a677bf7a1",
+    "semantic_hash": "677887f5bfb328a382a57e8a677bf7a1"
+  },
+  "src/main/java/org/springframework/samples/petclinic/service/ClinicService.java": {
+    "mtime": 1793879240.0876405,
+    "ast_hash": "386bdaa51b3b57acaa5ce01e63ff8a2c",
+    "semantic_hash": "386bdaa51b3b57acaa5ce01e63ff8a2c"
+  },
+  "src/main/java/org/springframework/samples/petclinic/service/ClinicServiceImpl.java": {
+    "mtime": 1793879240.0877693,
+    "ast_hash": "67c7ace125fe71a7f38a8831965578b8",
+    "semantic_hash": "67c7ace125fe71a7f38a8831965578b8"
+  },
+  "src/main/java/org/springframework/samples/petclinic/util/CallMonitoringAspect.java": {
+    "mtime": 1793879240.0877693,
+    "ast_hash": "40f122964ec20f0657efb0c11f1a000d",
+    "semantic_hash": "40f122964ec20f0657efb0c11f1a000d"
+  },
+  "src/main/java/org/springframework/samples/petclinic/util/EntityUtils.java": {
+    "mtime": 1793879240.0878663,
+    "ast_hash": "2b3f8e18dc76b1111dc2e5fc3b12b208",
+    "semantic_hash": "2b3f8e18dc76b1111dc2e5fc3b12b208"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/CrashController.java": {
+    "mtime": 1793879240.0878663,
+    "ast_hash": "366ff73dae7de2cc74f705334e510453",
+    "semantic_hash": "366ff73dae7de2cc74f705334e510453"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/OwnerController.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "7994599e09f12e23a5a399ce8df03b6e",
+    "semantic_hash": "7994599e09f12e23a5a399ce8df03b6e"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/PetController.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "cdf950f01d383bfe12799a4c099a2c3b",
+    "semantic_hash": "cdf950f01d383bfe12799a4c099a2c3b"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/PetTypeFormatter.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "3db3d210b9cdef8e3956db9bc74fd3f3",
+    "semantic_hash": "3db3d210b9cdef8e3956db9bc74fd3f3"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/PetValidator.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "6032d055298d483755db65c999e497d5",
+    "semantic_hash": "6032d055298d483755db65c999e497d5"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/VetController.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "29474622bc8be2872f4c1f5295fe2187",
+    "semantic_hash": "29474622bc8be2872f4c1f5295fe2187"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/VisitController.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "c14c3d0f557ad6a17d2130601dfdac9f",
+    "semantic_hash": "c14c3d0f557ad6a17d2130601dfdac9f"
+  },
+  "src/main/java/org/springframework/samples/petclinic/web/package-info.java": {
+    "mtime": 1793879240.0880032,
+    "ast_hash": "0e861f842cad8bc90bfe6d5a3b599430",
+    "semantic_hash": "0e861f842cad8bc90bfe6d5a3b599430"
+  },
+  "src/main/resources/db/h2/data.sql": {
+    "mtime": 1793879240.0882502,
+    "ast_hash": "675865cb6ef6dfbb8f693468a3938b89",
+    "semantic_hash": "675865cb6ef6dfbb8f693468a3938b89"
+  },
+  "src/main/resources/db/h2/schema.sql": {
+    "mtime": 1793879240.0883856,
+    "ast_hash": "bfa44bda68b4f4c7b097e522b7510e53",
+    "semantic_hash": "bfa44bda68b4f4c7b097e522b7510e53"
+  },
+  "src/main/resources/db/hsqldb/data.sql": {
+    "mtime": 1793879240.0883856,
+    "ast_hash": "95de7efca80ba6f8a0d69e84e9d2a7db",
+    "semantic_hash": "95de7efca80ba6f8a0d69e84e9d2a7db"
+  },
+  "src/main/resources/db/hsqldb/schema.sql": {
+    "mtime": 1793879240.0884871,
+    "ast_hash": "3c80417c20b941684032689678df03ea",
+    "semantic_hash": "3c80417c20b941684032689678df03ea"
+  },
+  "src/main/resources/db/mysql/data.sql": {
+    "mtime": 1793879240.0884871,
+    "ast_hash": "5453d329c677bd68b8492c8200904cd4",
+    "semantic_hash": "5453d329c677bd68b8492c8200904cd4"
+  },
+  "src/main/resources/db/mysql/schema.sql": {
+    "mtime": 1793879240.0885696,
+    "ast_hash": "71d102ea3856c9b536ec930cbf76867e",
+    "semantic_hash": "71d102ea3856c9b536ec930cbf76867e"
+  },
+  "src/main/resources/db/postgresql/data.sql": {
+    "mtime": 1793879240.0885696,
+    "ast_hash": "eaa1137628e340da23d12d0fed2381b4",
+    "semantic_hash": "eaa1137628e340da23d12d0fed2381b4"
+  },
+  "src/main/resources/db/postgresql/schema.sql": {
+    "mtime": 1793879240.088679,
+    "ast_hash": "35a47d02a069003aaa03edc50691364b",
+    "semantic_hash": "35a47d02a069003aaa03edc50691364b"
+  },
+  "src/test/java/org/springframework/samples/petclinic/model/OwnerTests.java": {
+    "mtime": 1793879240.0934894,
+    "ast_hash": "0491864b7a6b807fbcda8b587b2ffe3e",
+    "semantic_hash": "0491864b7a6b807fbcda8b587b2ffe3e"
+  },
+  "src/test/java/org/springframework/samples/petclinic/model/PetTests.java": {
+    "mtime": 1793879240.0935829,
+    "ast_hash": "ea6be8e0805d06b4ffdc76d3530ac1e4",
+    "semantic_hash": "ea6be8e0805d06b4ffdc76d3530ac1e4"
+  },
+  "src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java": {
+    "mtime": 1793879240.0935829,
+    "ast_hash": "2fb67f5ca8df3edecfdc000354d0fb38",
+    "semantic_hash": "2fb67f5ca8df3edecfdc000354d0fb38"
+  },
+  "src/test/java/org/springframework/samples/petclinic/model/VetTests.java": {
+    "mtime": 1793879240.0935829,
+    "ast_hash": "b160b0dd6555c9ded6a169565b2ff260",
+    "semantic_hash": "b160b0dd6555c9ded6a169565b2ff260"
+  },
+  "src/test/java/org/springframework/samples/petclinic/service/AbstractClinicServiceTests.java": {
+    "mtime": 1793879240.0935829,
+    "ast_hash": "d83269da303362ae97622aae069c46cd",
+    "semantic_hash": "d83269da303362ae97622aae069c46cd"
+  },
+  "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceJdbcTests.java": {
+    "mtime": 1793879240.0937057,
+    "ast_hash": "d69eaeb9f62318edbec89907364306e3",
+    "semantic_hash": "d69eaeb9f62318edbec89907364306e3"
+  },
+  "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceJpaTests.java": {
+    "mtime": 1793879240.0937057,
+    "ast_hash": "f96720d52d3b3c477d7a2405bb3e3213",
+    "semantic_hash": "f96720d52d3b3c477d7a2405bb3e3213"
+  },
+  "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceSpringDataJpaTests.java": {
+    "mtime": 1793879240.0937057,
+    "ast_hash": "dc36de0cd909f0278449b9172c7c39d6",
+    "semantic_hash": "dc36de0cd909f0278449b9172c7c39d6"
+  },
+  "src/test/java/org/springframework/samples/petclinic/web/CrashControllerTests.java": {
+    "mtime": 1793879240.0937057,
+    "ast_hash": "972e0029226ca443e76e9452267ac3ed",
+    "semantic_hash": "972e0029226ca443e76e9452267ac3ed"
+  },
+  "src/test/java/org/springframework/samples/petclinic/web/OwnerControllerTests.java": {
+    "mtime": 1793879240.0941687,
+    "ast_hash": "f2444f7b068db770c27c82943c813b23",
+    "semantic_hash": "f2444f7b068db770c27c82943c813b23"
+  },
+  "src/test/java/org/springframework/samples/petclinic/web/PetControllerTests.java": {
+    "mtime": 1793879240.0941687,
+    "ast_hash": "d98f15917e4b442258a6808040105626",
+    "semantic_hash": "d98f15917e4b442258a6808040105626"
+  },
+  "src/test/java/org/springframework/samples/petclinic/web/PetTypeFormatterTests.java": {
+    "mtime": 1793879240.0941687,
+    "ast_hash": "e4299edef77f13c2de7a5a20a2b20cb9",
+    "semantic_hash": "e4299edef77f13c2de7a5a20a2b20cb9"
+  },
+  "src/test/java/org/springframework/samples/petclinic/web/VetControllerTests.java": {
+    "mtime": 1793879240.0941687,
+    "ast_hash": "defc0aea5da94b0dd45b43edce715838",
+    "semantic_hash": "defc0aea5da94b0dd45b43edce715838"
+  },
+  "src/test/java/org/springframework/samples/petclinic/web/VisitControllerTests.java": {
+    "mtime": 1793879240.0941687,
+    "ast_hash": "d5823c0659d84436ecf21d6e7aa4f09b",
+    "semantic_hash": "d5823c0659d84436ecf21d6e7aa4f09b"
+  },
+  ".github/dependabot.yml": {
+    "mtime": 1793879240.0836532,
+    "ast_hash": "59bd7e3db2a82a48306a033af6000ba6",
+    "semantic_hash": "59bd7e3db2a82a48306a033af6000ba6"
+  },
+  ".github/workflows/maven-build-main.yml": {
+    "mtime": 1793879240.0848534,
+    "ast_hash": "8f0bc7bba3ac32ce572195eae8d3570f",
+    "semantic_hash": "8f0bc7bba3ac32ce572195eae8d3570f"
+  },
+  ".github/workflows/maven-build-pull-request.yml": {
+    "mtime": 1793879240.084965,
+    "ast_hash": "8121b8f17aab7002b0db0a7ec1c68caa",
+    "semantic_hash": "8121b8f17aab7002b0db0a7ec1c68caa"
+  },
+  "LICENSE.txt": {
+    "mtime": 1793879240.0856304,
+    "ast_hash": "86d3f3a95c324c9479bd8986968f4327",
+    "semantic_hash": "86d3f3a95c324c9479bd8986968f4327"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/api-contracts.md": {
+    "mtime": 1793890957.346569,
+    "ast_hash": "516ef129cddb293164b4f2dcb82eabb9",
+    "semantic_hash": "516ef129cddb293164b4f2dcb82eabb9"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/architecture.md": {
+    "mtime": 1793890957.3370368,
+    "ast_hash": "29b948e4d5d040a5b93e202d1045c753",
+    "semantic_hash": "29b948e4d5d040a5b93e202d1045c753"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/component-inventory.md": {
+    "mtime": 1793890957.356293,
+    "ast_hash": "d2bbdcd29b247e8071f73ab68ccee9e2",
+    "semantic_hash": "d2bbdcd29b247e8071f73ab68ccee9e2"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/data-models.md": {
+    "mtime": 1793890957.3514626,
+    "ast_hash": "3835aee39433879f220e5390e948756c",
+    "semantic_hash": "3835aee39433879f220e5390e948756c"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/deployment-guide.md": {
+    "mtime": 1793890957.3318727,
+    "ast_hash": "d5bd63a5a01f5729a6a64b692283edcf",
+    "semantic_hash": "d5bd63a5a01f5729a6a64b692283edcf"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/development-guide.md": {
+    "mtime": 1793890957.3704772,
+    "ast_hash": "ff1573da552cfb3c2324a28c23ab82a1",
+    "semantic_hash": "ff1573da552cfb3c2324a28c23ab82a1"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/index.md": {
+    "mtime": 1793890957.3419878,
+    "ast_hash": "327817b4a9ed9fadbcc19b1364d6050e",
+    "semantic_hash": "327817b4a9ed9fadbcc19b1364d6050e"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/project-overview.md": {
+    "mtime": 1793890957.3650985,
+    "ast_hash": "72ff2c643d7890aca710a0a9d64c1c95",
+    "semantic_hash": "72ff2c643d7890aca710a0a9d64c1c95"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/detailed/source-tree-analysis.md": {
+    "mtime": 1793890957.3605409,
+    "ast_hash": "67ab6fc718ae644223843a2c7cbda35f",
+    "semantic_hash": "67ab6fc718ae644223843a2c7cbda35f"
+  },
+  "ai-docs/init/context/spring-framework-petclinic/project-context.md": {
+    "mtime": 1793890957.376442,
+    "ast_hash": "c8a69d4688ab3eb13b051be983e51e0a",
+    "semantic_hash": "c8a69d4688ab3eb13b051be983e51e0a"
+  },
+  "readme.md": {
+    "mtime": 1793879240.0856304,
+    "ast_hash": "7e742cc4490d0845bdcb51d1b8aa4adc",
+    "semantic_hash": "7e742cc4490d0845bdcb51d1b8aa4adc"
+  },
+  "src/main/resources/db/mysql/petclinic_db_setup_mysql.txt": {
+    "mtime": 1793879240.0885696,
+    "ast_hash": "f403647d7feab3114cce0690604dca3b",
+    "semantic_hash": "f403647d7feab3114cce0690604dca3b"
+  },
+  "src/main/resources/db/postgresql/petclinic_db_setup_postgresql.txt": {
+    "mtime": 1793879240.088679,
+    "ast_hash": "24c84be4671ec88c113db9b32dfb13a6",
+    "semantic_hash": "24c84be4671ec88c113db9b32dfb13a6"
+  },
+  "src/main/webapp/WEB-INF/no-spring-config-files-there.txt": {
+    "mtime": 1793879240.089651,
+    "ast_hash": "9ce1467729a514aa8db36962024d766f",
+    "semantic_hash": "9ce1467729a514aa8db36962024d766f"
+  },
+  "src/main/webapp/resources/fonts/montserrat-webfont.svg": {
+    "mtime": 1793879240.0907624,
+    "ast_hash": "54e8755f2f6a67ac999c0e1896610f00",
+    "semantic_hash": "54e8755f2f6a67ac999c0e1896610f00"
+  },
+  "src/main/webapp/resources/fonts/varela_round-webfont.svg": {
+    "mtime": 1793879240.0907624,
+    "ast_hash": "b3a009d5b7368a76524190b22439abb9",
+    "semantic_hash": "b3a009d5b7368a76524190b22439abb9"
+  },
+  "src/main/webapp/resources/images/favicon.png": {
+    "mtime": 1793879240.0907624,
+    "ast_hash": "ca31b78daf0dd9a106bbf3c6d87d4ec7",
+    "semantic_hash": "ca31b78daf0dd9a106bbf3c6d87d4ec7"
+  },
+  "src/main/webapp/resources/images/pets.png": {
+    "mtime": 1793879240.0925279,
+    "ast_hash": "03b0d7db58294b8aa2f45a673dcec107",
+    "semantic_hash": "03b0d7db58294b8aa2f45a673dcec107"
+  },
+  "src/main/webapp/resources/images/platform-bg.png": {
+    "mtime": 1793879240.0925279,
+    "ast_hash": "d61e09609d3fb9fdb3a20c5f1d05df8e",
+    "semantic_hash": "d61e09609d3fb9fdb3a20c5f1d05df8e"
+  },
+  "src/main/webapp/resources/images/spring-logo-dataflow-mobile.png": {
+    "mtime": 1793879240.0925279,
+    "ast_hash": "635bf39abf0e3c6721e4f605e1cf98fa",
+    "semantic_hash": "635bf39abf0e3c6721e4f605e1cf98fa"
+  },
+  "src/main/webapp/resources/images/spring-logo-dataflow.png": {
+    "mtime": 1793879240.0925279,
+    "ast_hash": "406c25c39310b5fd12771a8bd8c64163",
+    "semantic_hash": "406c25c39310b5fd12771a8bd8c64163"
+  },
+  "src/main/webapp/resources/images/spring-pivotal-logo.png": {
+    "mtime": 1793879240.0925279,
+    "ast_hash": "553d66e6b2d858e69d0ca13309595c9e",
+    "semantic_hash": "553d66e6b2d858e69d0ca13309595c9e"
+  }
+}
