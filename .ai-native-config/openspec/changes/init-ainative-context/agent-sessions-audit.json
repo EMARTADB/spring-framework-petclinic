@@ -334,5 +334,61 @@
     "tool_call_count": 5,
     "message_count": 7,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e544bbd7affevKK1OyT2JT8d1m",
+      "parent_id": "ses_e545d03f1ffeHeFr66azm0R5OP"
+    },
+    "message_id": "msg_1abb46e0f001XC3eddcboiDRv0",
+    "stage": "pr-publish",
+    "session_title": "Reintentar PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T12:34:39.884Z",
+    "end_timestamp": "2026-11-05T12:34:55.158Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "unexpected",
+    "reason": "Branch openspec/changes/init-ainative-context is not pushed to the remote, so GitHub reports no commits between it and main and the PR cannot be created.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 12,
+      "output": 949,
+      "reasoning": 0,
+      "cache": {
+        "read": 579981,
+        "write": 2142
+      }
+    },
+    "cost": 0.0728671,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 12,
+        "output": 949,
+        "reasoning": 0,
+        "cache": {
+          "read": 579981,
+          "write": 2142
+        }
+      },
+      "cost": 0.0728671
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 98,
+        "output": 9849,
+        "reasoning": 214,
+        "cache": {
+          "read": 4324652,
+          "write": 736683
+        }
+      },
+      "cost": 2.3749987
+    },
+    "tool_call_count": 4,
+    "message_count": 6,
+    "interactive": false
   }
 ]
