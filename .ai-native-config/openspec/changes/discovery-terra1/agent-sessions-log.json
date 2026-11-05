@@ -61,5 +61,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac6bb067001lMORM9D2xzi8Om"
+  },
+  {
+    "session_id": "ses_e5393e9c1ffeV3k0PGCT8bKd8r",
+    "stage": "discovery-functional",
+    "session_title": "Extract functional docs (@discovery/init-functional subagent)",
+    "agent_name": "discovery/init-functional",
+    "init_timestamp": "2026-11-05T15:55:27.174Z",
+    "end_timestamp": "2026-11-05T15:59:41.393Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac6fd9970015HmgVSjdAjVKZ2"
   }
 ]

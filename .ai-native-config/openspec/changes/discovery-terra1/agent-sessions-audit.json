@@ -502,5 +502,61 @@
     "tool_call_count": 41,
     "message_count": 18,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e5393e9c1ffeV3k0PGCT8bKd8r",
+      "parent_id": "ses_e53b01f5dffeS9sPv39z8dSacI"
+    },
+    "message_id": "msg_1ac6fd9970015HmgVSjdAjVKZ2",
+    "stage": "discovery-functional",
+    "session_title": "Extract functional docs (@discovery/init-functional subagent)",
+    "agent_name": "discovery/init-functional",
+    "init_timestamp": "2026-11-05T15:55:27.174Z",
+    "end_timestamp": "2026-11-05T15:59:41.393Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 138883,
+      "output": 5901,
+      "reasoning": 567,
+      "cache": {
+        "read": 1810432,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 138883,
+        "output": 5901,
+        "reasoning": 567,
+        "cache": {
+          "read": 1810432,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 950920,
+        "output": 42069,
+        "reasoning": 10989,
+        "cache": {
+          "read": 9137152,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 44,
+    "message_count": 20,
+    "interactive": false
   }
 ]
