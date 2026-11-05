@@ -75,5 +75,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1abba03ba001LVQEXkvbSwPnZp"
+  },
+  {
+    "session_id": "ses_e5445da63ffeCVvjklhtHHW4XD",
+    "stage": "archive",
+    "session_title": "Archivar cambio (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T12:41:05.697Z",
+    "end_timestamp": "2026-11-05T12:41:12.784Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1abba3833001XwHvR6AB6Pczzv"
   }
 ]

@@ -502,5 +502,61 @@
     "tool_call_count": 5,
     "message_count": 7,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e5445da63ffeCVvjklhtHHW4XD",
+      "parent_id": "ses_e545d03f1ffeHeFr66azm0R5OP"
+    },
+    "message_id": "msg_1abba3833001XwHvR6AB6Pczzv",
+    "stage": "archive",
+    "session_title": "Archivar cambio (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T12:41:05.697Z",
+    "end_timestamp": "2026-11-05T12:41:12.784Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 8,
+      "output": 307,
+      "reasoning": 0,
+      "cache": {
+        "read": 232815,
+        "write": 117437
+      }
+    },
+    "cost": 0.31996,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 8,
+        "output": 307,
+        "reasoning": 0,
+        "cache": {
+          "read": 232815,
+          "write": 117437
+        }
+      },
+      "cost": 0.31996
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 140,
+        "output": 13078,
+        "reasoning": 331,
+        "cache": {
+          "read": 6246492,
+          "write": 1114124
+        }
+      },
+      "cost": 3.5443291999999995
+    },
+    "tool_call_count": 2,
+    "message_count": 4,
+    "interactive": false
   }
 ]
