@@ -110,5 +110,61 @@
     "tool_call_count": 3,
     "message_count": 4,
     "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e54328c61ffek5Vp0vochZcZj3",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abce01bd001TWy9nIZGg8myaD",
+    "stage": null,
+    "session_title": "Generate context documents (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T13:02:10.854Z",
+    "end_timestamp": "2026-11-05T13:02:50.594Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 20,
+      "output": 4058,
+      "reasoning": 0,
+      "cache": {
+        "read": 1033855,
+        "write": 137835
+      }
+    },
+    "cost": 0.488593,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 20,
+        "output": 4058,
+        "reasoning": 0,
+        "cache": {
+          "read": 1033855,
+          "write": 137835
+        }
+      },
+      "cost": 0.488593
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 52,
+        "output": 6874,
+        "reasoning": 109,
+        "cache": {
+          "read": 2635583,
+          "write": 398429
+        }
+      },
+      "cost": 1.3295648000000002
+    },
+    "tool_call_count": 11,
+    "message_count": 10,
+    "interactive": false
   }
 ]
