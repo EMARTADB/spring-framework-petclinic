@@ -76,5 +76,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac3c7093001C0KClt8GGvglJm"
+  },
+  {
+    "session_id": "ses_e53c35d59ffeMsZKEUVNwf0S3Z",
+    "stage": "pr-publish",
+    "session_title": "PR publish stage (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T15:03:37.387Z",
+    "end_timestamp": "2026-11-05T15:03:57.617Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac3ce97f001STTQ7PO1gN1SPr"
   }
 ]

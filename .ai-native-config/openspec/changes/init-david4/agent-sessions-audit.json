@@ -334,5 +334,61 @@
     "tool_call_count": 9,
     "message_count": 10,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53c35d59ffeMsZKEUVNwf0S3Z",
+      "parent_id": "ses_e53cdb885ffeyeuXIXSe1Vngt2"
+    },
+    "message_id": "msg_1ac3ce97f001STTQ7PO1gN1SPr",
+    "stage": "pr-publish",
+    "session_title": "PR publish stage (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T15:03:37.387Z",
+    "end_timestamp": "2026-11-05T15:03:57.617Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 12,
+      "output": 608,
+      "reasoning": 0,
+      "cache": {
+        "read": 464248,
+        "write": 117240
+      }
+    },
+    "cost": 0.34562879999999996,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 12,
+        "output": 608,
+        "reasoning": 0,
+        "cache": {
+          "read": 464248,
+          "write": 117240
+        }
+      },
+      "cost": 0.34562879999999996
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 106,
+        "output": 17410,
+        "reasoning": 641,
+        "cache": {
+          "read": 5276413,
+          "write": 679361
+        }
+      },
+      "cost": 2.4067658
+    },
+    "tool_call_count": 4,
+    "message_count": 6,
+    "interactive": false
   }
 ]
