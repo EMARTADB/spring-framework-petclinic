@@ -1,0 +1,108 @@
+[
+  {
+    "workflow": "config/workflows/init/workflow.yaml",
+    "global_parameters": {
+      "change_name": "init-project-context",
+      "scan_depth_level": "quick",
+      "description": "Initializes the project context: context documents, detailed context documents, review and knowledge graph."
+    }
+  },
+  {
+    "session_id": "ses_e5432f39fffeSNEertdXQkeuYc",
+    "stage": "start-wf",
+    "session_title": "Quick scan for init-project-context name change",
+    "agent_name": "orchestrators/init",
+    "init_timestamp": "2026-11-05T13:01:44.426Z",
+    "end_timestamp": "2026-11-05T13:01:53.540Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": "auto",
+    "reason": null,
+    "message_id": "msg_1abcd2818001L1ShYhhLVrNEsB"
+  },
+  {
+    "session_id": "ses_e54328c61ffek5Vp0vochZcZj3",
+    "stage": null,
+    "session_title": "Generate context documents (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T13:02:10.854Z",
+    "end_timestamp": "2026-11-05T13:02:50.594Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1abce01bd001TWy9nIZGg8myaD"
+  },
+  {
+    "session_id": "ses_e5431d59effeXqzf44Znb38FS8",
+    "stage": null,
+    "session_title": "Generate detailed context docs (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T13:02:57.640Z",
+    "end_timestamp": "2026-11-05T13:03:46.481Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1abced2cd0011jfipF3H4qZJso"
+  },
+  {
+    "session_id": "ses_e5430fe49ffes1r0oxFEJEAsuC",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T13:03:52.764Z",
+    "end_timestamp": "2026-11-05T13:04:00.498Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "assessment_failures",
+    "reason": "The expected graph artifact init/graph/GRAPH_REPORT.md is missing, so the change is incomplete.",
+    "message_id": "msg_1abcf0ad4001fO6F8cgrsg21O6"
+  },
+  {
+    "session_id": "ses_e543004c9ffebAN71OmWc6mFT7",
+    "stage": "graph",
+    "session_title": "Build knowledge graph (@init/graph subagent)",
+    "agent_name": "init/graph",
+    "init_timestamp": "2026-11-05T13:04:56.639Z",
+    "end_timestamp": "2026-11-05T13:05:51.549Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1abd0b76f001xyK4y8W9qGGVAh"
+  },
+  {
+    "session_id": "ses_e542f147dffeCJ4IctPxRg3Wcc",
+    "stage": "pr-publish",
+    "session_title": "Publish PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T13:05:58.150Z",
+    "end_timestamp": "2026-11-05T13:06:13.007Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1abd11d3b001KlkHCZjoRHmLft"
+  },
+  {
+    "session_id": "ses_e542ec222ffe4ad9gKpRGjM705",
+    "stage": "archive",
+    "session_title": "Archive change (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T13:06:19.234Z",
+    "end_timestamp": "2026-11-05T13:06:23.632Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "No delta specs present; sync skipped.",
+    "message_id": "msg_1abd1459e001yvSAG7z133JnCf"
+  }
+]

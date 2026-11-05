@@ -1,0 +1,450 @@
+[
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e5434a1adffeLHvDx0qylXdIF7",
+      "parent_id": null
+    },
+    "message_id": "msg_1abcc66020014riY9UcO2tnu2Y",
+    "stage": null,
+    "session_title": "Inicio de flujo init",
+    "agent_name": "system/local-orchestrator",
+    "init_timestamp": "2026-11-05T12:59:54.347Z",
+    "end_timestamp": "2026-11-05T13:01:03.758Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 24,
+      "output": 2470,
+      "reasoning": 65,
+      "cache": {
+        "read": 1371281,
+        "write": 143810
+      }
+    },
+    "cost": 0.5220511000000001,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 24,
+        "output": 2470,
+        "reasoning": 65,
+        "cache": {
+          "read": 1371281,
+          "write": 143810
+        }
+      },
+      "cost": 0.5220511000000001
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 24,
+        "output": 2470,
+        "reasoning": 65,
+        "cache": {
+          "read": 1371281,
+          "write": 143810
+        }
+      },
+      "cost": 0.5220511000000001
+    },
+    "tool_call_count": 12,
+    "message_count": 12,
+    "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e5432f39fffeSNEertdXQkeuYc",
+      "parent_id": null
+    },
+    "message_id": "msg_1abcd2818001L1ShYhhLVrNEsB",
+    "stage": "start-wf",
+    "session_title": "Quick scan for init-project-context name change",
+    "agent_name": "orchestrators/init",
+    "init_timestamp": "2026-11-05T13:01:44.426Z",
+    "end_timestamp": "2026-11-05T13:01:53.540Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": "auto",
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 8,
+      "output": 346,
+      "reasoning": 44,
+      "cache": {
+        "read": 230447,
+        "write": 116784
+      }
+    },
+    "cost": 0.3189207,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 8,
+        "output": 346,
+        "reasoning": 44,
+        "cache": {
+          "read": 230447,
+          "write": 116784
+        }
+      },
+      "cost": 0.3189207
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 32,
+        "output": 2816,
+        "reasoning": 109,
+        "cache": {
+          "read": 1601728,
+          "write": 260594
+        }
+      },
+      "cost": 0.8409718000000002
+    },
+    "tool_call_count": 3,
+    "message_count": 4,
+    "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e54328c61ffek5Vp0vochZcZj3",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abce01bd001TWy9nIZGg8myaD",
+    "stage": null,
+    "session_title": "Generate context documents (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T13:02:10.854Z",
+    "end_timestamp": "2026-11-05T13:02:50.594Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 20,
+      "output": 4058,
+      "reasoning": 0,
+      "cache": {
+        "read": 1033855,
+        "write": 137835
+      }
+    },
+    "cost": 0.488593,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 20,
+        "output": 4058,
+        "reasoning": 0,
+        "cache": {
+          "read": 1033855,
+          "write": 137835
+        }
+      },
+      "cost": 0.488593
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 52,
+        "output": 6874,
+        "reasoning": 109,
+        "cache": {
+          "read": 2635583,
+          "write": 398429
+        }
+      },
+      "cost": 1.3295648000000002
+    },
+    "tool_call_count": 11,
+    "message_count": 10,
+    "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e5431d59effeXqzf44Znb38FS8",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abced2cd0011jfipF3H4qZJso",
+    "stage": null,
+    "session_title": "Generate detailed context docs (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T13:02:57.640Z",
+    "end_timestamp": "2026-11-05T13:03:46.481Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 14,
+      "output": 6533,
+      "reasoning": 105,
+      "cache": {
+        "read": 789366,
+        "write": 38839
+      }
+    },
+    "cost": 0.24244210000000005,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 14,
+        "output": 6533,
+        "reasoning": 105,
+        "cache": {
+          "read": 789366,
+          "write": 38839
+        }
+      },
+      "cost": 0.24244210000000005
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 66,
+        "output": 13407,
+        "reasoning": 214,
+        "cache": {
+          "read": 3424949,
+          "write": 437268
+        }
+      },
+      "cost": 1.5720069000000003
+    },
+    "tool_call_count": 7,
+    "message_count": 7,
+    "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e5430fe49ffes1r0oxFEJEAsuC",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abcf0ad4001fO6F8cgrsg21O6",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T13:03:52.764Z",
+    "end_timestamp": "2026-11-05T13:04:00.498Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "assessment_failures",
+    "reason": "The expected graph artifact init/graph/GRAPH_REPORT.md is missing, so the change is incomplete.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 6,
+      "output": 504,
+      "reasoning": 137,
+      "cache": {
+        "read": 114384,
+        "write": 116663
+      }
+    },
+    "cost": 0.3095179,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 6,
+        "output": 504,
+        "reasoning": 137,
+        "cache": {
+          "read": 114384,
+          "write": 116663
+        }
+      },
+      "cost": 0.3095179
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 72,
+        "output": 13911,
+        "reasoning": 351,
+        "cache": {
+          "read": 3539333,
+          "write": 553931
+        }
+      },
+      "cost": 1.8815248000000002
+    },
+    "tool_call_count": 1,
+    "message_count": 3,
+    "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e543004c9ffebAN71OmWc6mFT7",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abd0b76f001xyK4y8W9qGGVAh",
+    "stage": "graph",
+    "session_title": "Build knowledge graph (@init/graph subagent)",
+    "agent_name": "init/graph",
+    "init_timestamp": "2026-11-05T13:04:56.639Z",
+    "end_timestamp": "2026-11-05T13:05:51.549Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 24,
+      "output": 5866,
+      "reasoning": 275,
+      "cache": {
+        "read": 1374210,
+        "write": 146414
+      }
+    },
+    "cost": 0.564914,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 24,
+        "output": 5866,
+        "reasoning": 275,
+        "cache": {
+          "read": 1374210,
+          "write": 146414
+        }
+      },
+      "cost": 0.564914
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 96,
+        "output": 19777,
+        "reasoning": 626,
+        "cache": {
+          "read": 4913543,
+          "write": 700345
+        }
+      },
+      "cost": 2.4464388
+    },
+    "tool_call_count": 10,
+    "message_count": 12,
+    "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e542f147dffeCJ4IctPxRg3Wcc",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abd11d3b001KlkHCZjoRHmLft",
+    "stage": "pr-publish",
+    "session_title": "Publish PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T13:05:58.150Z",
+    "end_timestamp": "2026-11-05T13:06:13.007Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 12,
+      "output": 710,
+      "reasoning": 0,
+      "cache": {
+        "read": 464549,
+        "write": 117630
+      }
+    },
+    "cost": 0.34765389999999996,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 12,
+        "output": 710,
+        "reasoning": 0,
+        "cache": {
+          "read": 464549,
+          "write": 117630
+        }
+      },
+      "cost": 0.34765389999999996
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 108,
+        "output": 20487,
+        "reasoning": 626,
+        "cache": {
+          "read": 5378092,
+          "write": 817975
+        }
+      },
+      "cost": 2.7940927
+    },
+    "tool_call_count": 4,
+    "message_count": 6,
+    "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e542ec222ffe4ad9gKpRGjM705",
+      "parent_id": "ses_e5434a1adffeLHvDx0qylXdIF7"
+    },
+    "message_id": "msg_1abd1459e001yvSAG7z133JnCf",
+    "stage": "archive",
+    "session_title": "Archive change (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T13:06:19.234Z",
+    "end_timestamp": "2026-11-05T13:06:23.632Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "No delta specs present; sync skipped.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 6,
+      "output": 271,
+      "reasoning": 0,
+      "cache": {
+        "read": 116331,
+        "write": 116528
+      }
+    },
+    "cost": 0.3056751,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 6,
+        "output": 271,
+        "reasoning": 0,
+        "cache": {
+          "read": 116331,
+          "write": 116528
+        }
+      },
+      "cost": 0.3056751
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 114,
+        "output": 20758,
+        "reasoning": 626,
+        "cache": {
+          "read": 5494423,
+          "write": 934503
+        }
+      },
+      "cost": 3.0997678000000004
+    },
+    "tool_call_count": 1,
+    "message_count": 3,
+    "interactive": false
+  }
+]
