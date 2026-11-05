@@ -34,5 +34,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac2982df001G2zvCTymmw1s8N"
+  },
+  {
+    "session_id": "ses_e53d6507fffetR9J82jwCVkvN9",
+    "stage": null,
+    "session_title": "Detailed context documents (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T14:42:55.492Z",
+    "end_timestamp": "2026-11-05T14:43:58.920Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac2a92ea001RBoB5p4gY1dARu"
   }
 ]
