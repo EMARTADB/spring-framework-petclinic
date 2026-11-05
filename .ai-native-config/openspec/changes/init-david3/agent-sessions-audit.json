@@ -1,0 +1,114 @@
+[
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53da22b3ffecoB5eTMhNzIriY",
+      "parent_id": null
+    },
+    "message_id": "msg_1ac2746bb001EftYHiHP6F7wBD",
+    "stage": null,
+    "session_title": "Init command execution",
+    "agent_name": "system/local-orchestrator",
+    "init_timestamp": "2026-11-05T14:38:45.098Z",
+    "end_timestamp": "2026-11-05T14:40:20.025Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 24,
+      "output": 2680,
+      "reasoning": 148,
+      "cache": {
+        "read": 1373227,
+        "write": 144234
+      }
+    },
+    "cost": 0.5262357,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 24,
+        "output": 2680,
+        "reasoning": 148,
+        "cache": {
+          "read": 1373227,
+          "write": 144234
+        }
+      },
+      "cost": 0.5262357
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 24,
+        "output": 2680,
+        "reasoning": 148,
+        "cache": {
+          "read": 1373227,
+          "write": 144234
+        }
+      },
+      "cost": 0.5262357
+    },
+    "tool_call_count": 13,
+    "message_count": 12,
+    "interactive": true
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53d8019dffejEUWViZMEaN1KC",
+      "parent_id": null
+    },
+    "message_id": "msg_1ac28803b0015JbSKO5wEY8wiT",
+    "stage": "start-wf",
+    "session_title": "Rename to init-david3 with quick scan depth",
+    "agent_name": "orchestrators/init",
+    "init_timestamp": "2026-11-05T14:41:04.633Z",
+    "end_timestamp": "2026-11-05T14:41:39.705Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": "auto",
+    "reason": null,
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 8,
+      "output": 334,
+      "reasoning": 0,
+      "cache": {
+        "read": 230435,
+        "write": 116724
+      }
+    },
+    "cost": 0.31820950000000003,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 8,
+        "output": 334,
+        "reasoning": 0,
+        "cache": {
+          "read": 230435,
+          "write": 116724
+        }
+      },
+      "cost": 0.31820950000000003
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 32,
+        "output": 3014,
+        "reasoning": 148,
+        "cache": {
+          "read": 1603662,
+          "write": 260958
+        }
+      },
+      "cost": 0.8444452
+    },
+    "tool_call_count": 3,
+    "message_count": 4,
+    "interactive": true
+  }
+]
