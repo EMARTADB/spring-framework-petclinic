@@ -62,5 +62,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac16e074001yxgLZ5XhWWo5aQ"
+  },
+  {
+    "session_id": "ses_e53e8f094ffeEJfhja1CLX38oz",
+    "stage": "graph",
+    "session_title": "Graph indexing (@init/graph subagent)",
+    "agent_name": "init/graph",
+    "init_timestamp": "2026-11-05T14:22:34.864Z",
+    "end_timestamp": "2026-11-05T14:23:14.473Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac1793b50017ImJ8Ge4uU7Irh"
   }
 ]
