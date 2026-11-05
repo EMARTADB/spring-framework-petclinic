@@ -47,5 +47,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1ac67f6ff001x3dm5qIPvLkf53"
+  },
+  {
+    "session_id": "ses_e53979cefffeKR90LdtO7aURM4",
+    "stage": "business-rules-extractor",
+    "session_title": "Extract business rules (@discovery/init-business-rules subagent)",
+    "agent_name": "discovery/init-business-rules",
+    "init_timestamp": "2026-11-05T15:51:24.693Z",
+    "end_timestamp": "2026-11-05T15:55:07.271Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac6bb067001lMORM9D2xzi8Om"
   }
 ]
