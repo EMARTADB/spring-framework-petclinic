@@ -19,5 +19,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1aba4cca3001BU0jXm80QkNXqk"
+  },
+  {
+    "session_id": "ses_e54594a3effeWOr5NyMpv9K0ex",
+    "stage": "pr-publish",
+    "session_title": "Publicar PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T12:19:51.879Z",
+    "end_timestamp": "2026-11-05T12:20:08.227Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "unexpected",
+    "reason": "Branch openspec/changes/init-ainative-context has no commits relative to main and is not pushed, so no PR could be created.",
+    "message_id": "msg_1aba6eaea001KAvTV121zz0TTQ"
   }
 ]
