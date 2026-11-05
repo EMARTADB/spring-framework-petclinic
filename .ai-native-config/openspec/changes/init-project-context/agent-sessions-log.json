@@ -48,5 +48,19 @@
     "condition": null,
     "reason": null,
     "message_id": "msg_1abced2cd0011jfipF3H4qZJso"
+  },
+  {
+    "session_id": "ses_e5430fe49ffes1r0oxFEJEAsuC",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T13:03:52.764Z",
+    "end_timestamp": "2026-11-05T13:04:00.498Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "failure",
+    "condition": "assessment_failures",
+    "reason": "The expected graph artifact init/graph/GRAPH_REPORT.md is missing, so the change is incomplete.",
+    "message_id": "msg_1abcf0ad4001fO6F8cgrsg21O6"
   }
 ]
