@@ -1,0 +1,108 @@
+[
+  {
+    "workflow": "config/workflows/init/workflow.yaml",
+    "global_parameters": {
+      "change_name": "init-david1",
+      "scan_depth_level": "quick",
+      "description": "Initializes the project context: context documents, detailed context documents, review and knowledge graph."
+    }
+  },
+  {
+    "session_id": "ses_e53eaf665ffeb7h1b843iQhV5q",
+    "stage": "start-wf",
+    "session_title": "Quick scan with name change to init-david1",
+    "agent_name": "orchestrators/init",
+    "init_timestamp": "2026-11-05T14:20:22.320Z",
+    "end_timestamp": "2026-11-05T14:20:38.936Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": "auto",
+    "reason": null,
+    "message_id": "msg_1ac1543a20019mJNvpu7x61GqO"
+  },
+  {
+    "session_id": "ses_e53ea52fdffeAYrgAmXRWio4B7",
+    "stage": null,
+    "session_title": "Context document stage (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T14:21:04.139Z",
+    "end_timestamp": "2026-11-05T14:21:31.867Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac160b790016wAr0HRdlRrHw2"
+  },
+  {
+    "session_id": "ses_e53e9c724ffe7bcldzg0VkEp2Z",
+    "stage": null,
+    "session_title": "Detailed context documents (@init/context-document subagent)",
+    "agent_name": "init/context-document",
+    "init_timestamp": "2026-11-05T14:21:39.947Z",
+    "end_timestamp": "2026-11-05T14:22:10.657Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac169f88001H26gSfv0zaHV47"
+  },
+  {
+    "session_id": "ses_e53e9367affedOXRc6xqPm4r6A",
+    "stage": "review",
+    "session_title": "Review context documents (@init/reviewer subagent)",
+    "agent_name": "init/reviewer",
+    "init_timestamp": "2026-11-05T14:22:16.970Z",
+    "end_timestamp": "2026-11-05T14:22:27.167Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac16e074001yxgLZ5XhWWo5aQ"
+  },
+  {
+    "session_id": "ses_e53e8f094ffeEJfhja1CLX38oz",
+    "stage": "graph",
+    "session_title": "Graph indexing (@init/graph subagent)",
+    "agent_name": "init/graph",
+    "init_timestamp": "2026-11-05T14:22:34.864Z",
+    "end_timestamp": "2026-11-05T14:23:14.473Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac1793b50017ImJ8Ge4uU7Irh"
+  },
+  {
+    "session_id": "ses_e53e83dc2ffeNGnwtpp85jQ96T",
+    "stage": "pr-publish",
+    "session_title": "Publish PR (@pr-publisher subagent)",
+    "agent_name": "pr-publisher",
+    "init_timestamp": "2026-11-05T14:23:20.642Z",
+    "end_timestamp": "2026-11-05T14:23:36.474Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": null,
+    "message_id": "msg_1ac17f74c001Js7rlfaSY3q9Jg"
+  },
+  {
+    "session_id": "ses_e53e7e5aeffeZwHB89ZlMpGdIs",
+    "stage": "archive",
+    "session_title": "Archive change (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T14:23:43.190Z",
+    "end_timestamp": "2026-11-05T14:23:52.108Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "No delta specs exist for init-david1, so no sync was needed.",
+    "message_id": "msg_1ac1832b5001sJhOpRId1DzNLE"
+  }
+]
