@@ -222,5 +222,61 @@
     "tool_call_count": 71,
     "message_count": 16,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53a400fcffeJ0bDgMDyXG4HG6",
+      "parent_id": "ses_e53a4a81bffeACTozoy8XRrqLC"
+    },
+    "message_id": "msg_1ac5f7d96001F7a0xmUYrJXdEK",
+    "stage": null,
+    "session_title": "Assess Petclinic debt (@discovery/legacy-analyst subagent)",
+    "agent_name": "discovery/legacy-analyst",
+    "init_timestamp": "2026-11-05T15:37:52.649Z",
+    "end_timestamp": "2026-11-05T15:42:34.283Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": null,
+    "condition": null,
+    "reason": null,
+    "model": "openai/gpt-5.6-terra",
+    "tokens": {
+      "input": 102195,
+      "output": 5091,
+      "reasoning": 2513,
+      "cache": {
+        "read": 778240,
+        "write": 0
+      }
+    },
+    "cost": 0,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 102195,
+        "output": 5091,
+        "reasoning": 2513,
+        "cache": {
+          "read": 778240,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 379580,
+        "output": 13576,
+        "reasoning": 4215,
+        "cache": {
+          "read": 2752512,
+          "write": 0
+        }
+      },
+      "cost": 0
+    },
+    "tool_call_count": 59,
+    "message_count": 14,
+    "interactive": false
   }
 ]

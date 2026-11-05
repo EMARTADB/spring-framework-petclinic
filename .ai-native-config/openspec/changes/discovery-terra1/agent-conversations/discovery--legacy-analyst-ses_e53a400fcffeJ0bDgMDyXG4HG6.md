@@ -4881,4 +4881,45 @@ _(Step finished: tool-calls)_
 
 _(Step started)_
 
+## Stack observed
+
+Traditional Spring MVC WAR: servlet initializer → XML root/web contexts → annotated controllers → `ClinicService` facade → profile-selected JDBC/JPA/Spring Data repositories → JSP views. Evidence: `PetclinicInitializer.java:39-66`, `business-config.xml:29-96`, `mvc-view-config.xml:16-38`, `pom.xml:10-11`.
+
+## Top 10 findings, ranked by remediation value
+
+| Rank | Finding | Evidence-backed facts | Recommended remediation |
+|---:|---|---|---|
+| 1 | **Container API-version mismatch risk** | The WAR compiles against Servlet 6.1 (`pom.xml:43`, `pom.xml:113-118`) but the Jib image base is Jetty 11 (`pom.xml:471-490`). | Align the runtime image with the Servlet API target, or lower/standardize the API dependency. **Hypothesis:** this can cause deployment/runtime incompatibility; validate with an image build and deployed smoke test. |
+| 2 | **Three persistence implementations multiply maintenance** | Profile selection enables JDBC, handwritten JPA, or Spring Data JPA (`business-config.xml:29-96`), while each repository contract has implementations in all three styles; e.g., owner query logic is duplicated in JPA and Spring Data (`JpaOwnerRepositoryImpl.java:53-58`, `SpringDataOwnerRepository.java:34-40`). | Retire unused profiles after confirming operational needs; retain one supported persistence path and migration-test it. |
+| 3 | **Repository contract diverges by profile** | `VisitRepository.save()` promises insert *or update* (`VisitRepository.java:34-40`). JPA handles both with `persist`/`merge` (`JpaVisitRepositoryImpl.java:47-54`), while JDBC throws on updates (`JdbcVisitRepositoryImpl.java:55-64`). | Make the contract explicit (create-only vs upsert) or implement update consistently. Add a profile-contract test covering updates. |
+| 4 | **Known over-fetching in owner search** | The JPA implementation explicitly documents loading all owners’ pets and visits even though visits are not needed (`JpaOwnerRepositoryImpl.java:45-51`); its query fetches pets (`JpaOwnerRepositoryImpl.java:53-58`) and `Pet.visits` is eager (`Pet.java:60-61`). | Introduce a list/search projection or DTO that retrieves only fields required by the owner-search views. |
+| 5 | **JDBC veterinarian retrieval has an N+1 query pattern** | It queries vets once (`JdbcVetRepositoryImpl.java:57-62`), specialties once (`:64-67`), then issues a `vet_specialties` query inside the vet loop (`:69-85`). | Replace the per-vet query with one join query or one bulk `WHERE vet_id IN (...)` query and assemble in memory. |
+| 6 | **Write-capable MVC endpoints have no application security configuration** | Owner, pet, and visit POST handlers mutate data (`OwnerController.java:60-68`, `PetController.java:77-90`, `VisitController.java:75-82`). The build declares MVC/persistence dependencies but no Spring Security dependency (`pom.xml:155-250`), and MVC XML contains no security integration (`mvc-core-config.xml:17-66`). | Decide whether this is intentionally demo-only. If deployable beyond a trusted environment, add authentication, authorization, and CSRF protection at the application or platform boundary. |
+| 7 | **Intentional crash endpoint is exposed in normal navigation and reveals exception text** | `/oups` always throws a `RuntimeException` (`CrashController.java:32-36`), is linked in the main menu (`menu.tag:30-34`), and the error JSP renders `${exception.message}` (`exception.jsp:10-12`). The test expects HTTP 200 with the exception view (`CrashControllerTests.java:38-45`). | Remove or restrict the demonstration route outside development; use a controlled error response without exposing internal messages. |
+| 8 | **Vets cache has no freshness or invalidation policy** | `findVets()` is cacheable (`ClinicServiceImpl.java:98-103`) and the Caffeine manager only names caches—no expiry/size policy is configured (`tools-config.xml:37-47`). No cache eviction/update annotation appears in the service methods shown (`ClinicServiceImpl.java:72-107`). | Specify TTL/size and eviction behavior, or remove caching if the dataset is sufficiently small. **Hypothesis:** external database changes can remain stale for the JVM lifetime. |
+| 9 | **`findVisitsByPetId` appears unused by production MVC flow** | The service exposes and delegates it (`ClinicService.java:48-50`, `ClinicServiceImpl.java:105-108`), but the visits page instead loads a pet and calls `getVisits()` (`VisitController.java:85-88`). Repository-wide source search found its non-service use only in the service test (`AbstractClinicServiceTests.java:192-200`). | Confirm no external caller depends on this service interface; then remove it and the associated profile-specific implementations, or route the controller through it consistently. |
+| 10 | **Build configuration mixes generated web assets into source directories and packages test libraries** | The optional CSS profile writes generated CSS directly to `src/main/webapp/resources/css` (`pom.xml:629-646`), while that compiled CSS is present in the source tree (`src/main/webapp/resources/css/petclinic.css`). Also, `junit-jupiter-engine` and `mockito-junit-jupiter` omit `<scope>test</scope>` (`pom.xml:277-281`, `pom.xml:294-298`), unlike adjacent test dependencies. | Generate CSS under `target/` and copy it into the WAR during packaging; keep source and generated assets separate. Add test scope to test-only libraries and verify the resulting WAR dependency set. |
+
+## Coupling / god-object assessment
+
+- `ClinicServiceImpl` is a cross-aggregate façade with four repository dependencies (`ClinicServiceImpl.java:42-52`) and owns transaction/cache concerns (`:54-103`). This is **coupling evidence**, but it is only nine operations (`ClinicService.java:34-50`), so calling it a “god object” would not be justified.
+- The profile architecture adds a stronger form of coupling: every business contract must remain behaviorally aligned across JDBC, handwritten JPA, and Spring Data JPA implementations.
+
+## Deprecated API assessment
+
+No source use of `@Deprecated` or an explicitly deprecated Java/Spring API was found in the inspected production Java files. The repository does retain older-style XML configuration, JSP view resolution, WAR packaging, and a `libsass-maven-plugin` build path (`pom.xml:10`, `mvc-view-config.xml:16-38`, `pom.xml:629-646`), but their deprecation status cannot be established from repository contents alone.
+
+## Confidence & Gaps
+
+- **High confidence:** findings 2–5, 7, 9, and the concrete build facts in 10 are directly supported by code/configuration.
+- **Medium confidence:** findings 1, 6, and 8 include operational implications that require deployment/environment confirmation.
+- This was static, read-only analysis; no build, tests, dependency-tree, WAR inspection, or runtime profiling was run.
+- Ask SMEs:
+  1. Which persistence profiles are supported in real deployments?
+  2. Is this application intentionally demo-only and protected by infrastructure controls?
+  3. Is the Jib/Jetty image actively used for production delivery?
+  4. Are veterinarian records changed outside this application, making cache freshness relevant?
+
+_(Step finished: stop)_
+
 ---
