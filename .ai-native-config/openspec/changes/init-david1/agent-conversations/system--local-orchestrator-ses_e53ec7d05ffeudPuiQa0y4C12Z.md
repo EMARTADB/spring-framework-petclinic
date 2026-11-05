@@ -648,3 +648,93 @@ STEP_STATUS: success
 _(Step finished: tool-calls)_
 
 ---
+
+### 16. Assistant — 2026-11-05T14:21:34.222Z
+
+_(Step started)_
+
+Siguiente: detailed-context-documents.
+
+#### Tool: read
+
+```json
+{
+  "filePath": "/home/mduenasb/work-framework/ainative-framework/config/agents/init/context-document/detailed-context-documents-auto/input-prompt.md"
+}
+```
+
+```
+<path>/home/mduenasb/work-framework/ainative-framework/config/agents/init/context-document/detailed-context-documents-auto/input-prompt.md</path>
+<type>file</type>
+<content>
+1: Execute the project context init workflow for the following change.
+2: 
+3: **Change name** (): {param:"change_name"}
+4: 
+5: Using the skill "bmad-document-project", generate brand new project documentation for each repository in this workspace using scan depth level `{param:"scan_depth_level"}`. If more than one repository is present, also generate a `common` documentation set describing how the repositories relate; if there is only one repository, do not generate `common`.
+6: 
+7: Save the context documents under the change directory `./openspec/changes/{param:"change_name"}/`, in separate directories using this relative path: `init/context/<repository_or_common>/detailed/`, accepting all defaults to proceed to the next step without asking.
+
+(End of file - total 7 lines)
+</content>
+```
+
+_(Step finished: tool-calls)_
+
+---
+
+### 17. Assistant — 2026-11-05T14:21:36.488Z
+
+_(Step started)_
+
+#### Tool: bash
+
+```json
+{
+  "command": "export AINATIVE_STAGE_ID=detailed-context-documents; echo ok",
+  "workdir": "/home/mduenasb/ainative-workspaces/spring-framework-petclinic"
+}
+```
+
+```
+ok
+
+```
+
+#### Tool: task
+
+```json
+{
+  "description": "Detailed context documents",
+  "prompt": "Execute the project context init workflow for the following change.\n\n**Change name** (): {param:\"change_name\"}\n\nUsing the skill \"bmad-document-project\", generate brand new project documentation for each repository in this workspace using scan depth level `{param:\"scan_depth_level\"}`. If more than one repository is present, also generate a `common` documentation set describing how the repositories relate; if there is only one repository, do not generate `common`.\n\nSave the context documents under the change directory `./openspec/changes/{param:\"change_name\"}/`, in separate directories using this relative path: `init/context/<repository_or_common>/detailed/`, accepting all defaults to proceed to the next step without asking.",
+  "subagent_type": "init/context-document"
+}
+```
+
+```
+<task id="ses_e53e9c724ffe7bcldzg0VkEp2Z" state="completed">
+<task_result>
+I generated the quick-scan documentation set for the single repository, `spring-framework-petclinic`. I did not generate `common`, because the workspace has only one repository.
+
+Change: `init-david1`
+Location: `./openspec/changes/init-david1/init/context/spring-framework-petclinic/detailed/`
+
+I wrote the docs from a quick read of `pom.xml`, `readme.md`, the Spring XML configs, the controllers and the `src` file list. I didn't read the full source or run any build or tests. I didn't run the skill's `resolve_customization.py` step or load `_bmad/bmm/config.yaml`, since it isn't at the workspace root.
+
+Artifacts created:
+- `index.md`: index of the documentation set.
+- `project-overview.md`: purpose, tech stack and features.
+- `source-tree-analysis.md`: annotated directory structure.
+- `architecture.md`: the 3-layer structure, the jdbc/jpa/spring-data-jpa profiles, routes and domain model.
+- `development-guide.md`: run, database profiles, test, Docker and CI.
+
+All expected artifacts created!
+
+STEP_STATUS: success
+</task_result>
+</task>
+```
+
+_(Step finished: tool-calls)_
+
+---
