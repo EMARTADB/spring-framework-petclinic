@@ -981,3 +981,56 @@ STEP_STATUS: success
 _(Step finished: tool-calls)_
 
 ---
+
+### 25. Assistant — 2026-11-05T15:04:00.112Z
+
+_(Step started)_
+
+#### Tool: bash
+
+```json
+{
+  "command": "cat /home/mduenasb/work-framework/ainative-framework/config/agents/archivist/input-prompt.md; export AINATIVE_STAGE_ID=archive"
+}
+```
+
+```
+Execute the archive workflow for the following change.
+
+**Change name**: {param:"change_name"}
+
+```
+
+_(Step finished: tool-calls)_
+
+---
+
+### 26. Assistant — 2026-11-05T15:04:02.267Z
+
+_(Step started)_
+
+#### Tool: task
+
+```json
+{
+  "description": "Archive stage",
+  "prompt": "Execute the archive workflow for the following change.\n\n**Change name**: {param:\"change_name\"}",
+  "subagent_type": "archivist"
+}
+```
+
+```
+<task id="ses_e53c2f37fffeYJBiAv6sghaJqk" state="completed">
+<task_result>
+No delta specs exist for `init-david4`: `openspec/changes/init-david4/specs/` is not there. The change holds only the init context and graph artifacts plus the agent logs. I skipped the sync and left the change directory as it was.
+
+---
+STEP_STATUS: success
+STEP_REASON: No delta specs to sync; sync step skipped.
+</task_result>
+</task>
+```
+
+_(Step finished: tool-calls)_
+
+---

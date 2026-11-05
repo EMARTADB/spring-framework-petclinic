@@ -390,5 +390,61 @@
     "tool_call_count": 4,
     "message_count": 6,
     "interactive": false
+  },
+  {
+    "schema_version": 4,
+    "session": {
+      "id": "ses_e53c2f37fffeYJBiAv6sghaJqk",
+      "parent_id": "ses_e53cdb885ffeyeuXIXSe1Vngt2"
+    },
+    "message_id": "msg_1ac3d1f71001Tl4HIkk0BhfyR4",
+    "stage": "archive",
+    "session_title": "Archive stage (@archivist subagent)",
+    "agent_name": "archivist",
+    "init_timestamp": "2026-11-05T15:04:04.484Z",
+    "end_timestamp": "2026-11-05T15:04:11.602Z",
+    "iteration_count": 1,
+    "finish_reason": "stop",
+    "status": "success",
+    "condition": null,
+    "reason": "No delta specs to sync; sync step skipped.",
+    "model": "github-copilot/claude-sonnet-5.5",
+    "tokens": {
+      "input": 8,
+      "output": 285,
+      "reasoning": 0,
+      "cache": {
+        "read": 232847,
+        "write": 117278
+      }
+    },
+    "cost": 0.3193457,
+    "cumulative_per_session": {
+      "tokens": {
+        "input": 8,
+        "output": 285,
+        "reasoning": 0,
+        "cache": {
+          "read": 232847,
+          "write": 117278
+        }
+      },
+      "cost": 0.3193457
+    },
+    "cumulative_total": {
+      "tokens": {
+        "input": 114,
+        "output": 17695,
+        "reasoning": 641,
+        "cache": {
+          "read": 5509260,
+          "write": 796639
+        }
+      },
+      "cost": 2.7261115
+    },
+    "tool_call_count": 2,
+    "message_count": 4,
+    "interactive": false
   }
 ]
